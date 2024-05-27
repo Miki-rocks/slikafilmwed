@@ -1,0 +1,25 @@
+.footer {
+
+	border-top: 1px solid rgba($gray-1, 0.2);
+
+	&__logo-wrap {
+		&__logo {
+			.sfwed_logo {
+				height: $md-footer-logo-height;
+				width: auto;
+				max-width: 100%;
+
+				path {
+					// fill: $white;
+				}
+			}
+		}
+	}
+
+	&-copyright_wrap-copyright {
+		font-family: $font-family-base;
+		font-weight: 400;
+		font-size: 1.4rem;
+		line-height: 2.4rem;
+	}
+}

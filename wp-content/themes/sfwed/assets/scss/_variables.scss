@@ -1,0 +1,322 @@
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 744px,
+  lg: 1024px,
+  xl: 1440px
+);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 1240px,
+  xl: 1320px
+);
+
+//
+// Color system
+//
+$black:        #000000;
+$gray-5:       #777777;
+$gray-4:       #999999;
+$gray-3:       #DDDDDD;
+$gray-2:       #E7E7E7;
+$gray-1:       #F6F6F6;
+$white:        #FFFFFF;
+
+$primary-1:    #007EFF;
+$primary-2:    #007EFF;
+$secondary-1:  #DFF9EA;
+$secondary-2:  #DFF9EA;
+$tertiary-1:   #E72323;
+$tertiary-2:   #E72323;
+$quaternary-1: #FEF4F4;
+$quaternary-2: #FEF4F4;
+
+// $red-1:        #E40613;
+// $red-2:        #DB0614;
+// $gray-1:       #8a8a8a;
+// $gray-2:       #1c1c1c;
+
+$error:        $tertiary-1;
+$success:      #30C675;
+
+$colors: ();
+$colors: map-merge((
+  "black":          $black,
+  "white":          $white,
+  "primary-1":      $primary-1,
+  "primary-2":      $primary-2,
+  "secondary-1":    $secondary-1,
+  "secondary-2":    $secondary-2,
+  "tertiary-1":     $tertiary-1,
+  "tertiary-2":     $tertiary-2,
+  "quaternary-1":   $quaternary-1,
+  "quaternary-2":   $quaternary-2,
+), $colors);
+
+$colors-primary: ();
+$colors-primary: map-merge((
+  "primary-1":      $primary-1,
+  "secondary-1":    $secondary-1,
+), $colors-primary);
+
+$colors-secondary: ();
+$colors-secondary: map-merge((
+  "tertiary-1":     $tertiary-1,
+  "tertiary-2":     $tertiary-2,
+  "quaternary-1":   $quaternary-1,
+  "quaternary-2":   $quaternary-2,
+), $colors-secondary);
+
+$colors-typo: ();
+$colors-typo: map-merge((
+  "black":          $black,
+  "white":          $white,
+), $colors-typo);
+
+$colors-bg: ();
+$colors-bg: map-merge((
+  "primary-1":      $primary-1,
+  "secondary-1":    $secondary-1,
+  "tertiary-1":     $tertiary-1,
+  "quaternary-1":   $quaternary-1,
+), $colors-bg);
+
+$colors-button: ();
+$colors-button: map-merge((
+  "primary-1":      $primary-1,
+  "secondary-1":    $secondary-1,
+), $colors-button);
+
+$colors-links: ();
+$colors-links: map-merge((
+  
+), $colors-links);
+
+// spacing
+$spacer: 1rem;
+$spacers: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * 0.2),  // 2px
+    2: ($spacer * 0.4),  // 4px
+    3: ($spacer * 0.8),  // 8px
+    4: ($spacer * 1.2),  // 12px
+    5: ($spacer * 1.6),  // 16px
+    6: ($spacer * 2),    // 20px
+    7: ($spacer * 2.4),  // 24px
+    8: ($spacer * 3.2),  // 32px
+    9: ($spacer * 4),    // 40px
+    10: ($spacer * 4.8), // 48px
+    11: ($spacer * 6.4), // 64px
+    12: ($spacer * 8),   // 80px
+    13: ($spacer * 9.6), // 96px
+    14: ($spacer * 12),  // 120px
+    15: ($spacer * 16),  // 160px
+    16: ($spacer * 20),  // 200px
+    17: ($spacer * 24),  // 240px
+  ),
+  $spacers
+);
+
+//
+// Fonts
+// Font, line-height, and color for body text, headings, and more.
+//
+$body-color:                            color-typo();
+
+$font-family-primary:                   'Inter', sans-serif;
+$font-family-secondary:                 'Open Sans', sans-serif;
+$font-family-base:                      $font-family-primary;
+
+$font-size-base:              1rem; // ~16px - Default font size defined in _type.scss
+$font-size-lg:                $font-size-base * 1.25;
+$font-size-sm:                $font-size-base * .625;
+
+$font-desktop-sizes: ();
+$font-desktop-sizes: map-merge((
+  'l-s':      $font-size-base * 1.2, // ~12
+  'l-m':      $font-size-base * 1.4, // ~14
+  'l-l':      $font-size-base * 1.6, // ~16
+  'b-xs':     $font-size-base * 1.4, // ~14
+  'b-s':      $font-size-base * 1.6, // ~16
+  'b-m':      $font-size-base * 1.8, // ~18
+  'b-l':      $font-size-base * 2,   // ~20
+  'b-xl':     $font-size-base * 2.4, // ~24
+  'h-xxs':    $font-size-base * 1.6, // ~16
+  'h-xs':     $font-size-base * 1.8, // ~18
+  'h-s':      $font-size-base * 2,   // ~20
+  'h-m':      $font-size-base * 2.4, // ~24
+  'h-l':      $font-size-base * 3.6, // ~36
+  'h-xl':     $font-size-base * 5.2, // ~52
+  'h-xxl':    $font-size-base * 8,   // ~80
+), $font-desktop-sizes);
+
+$font-mobile-sizes: ();
+$font-mobile-sizes: map-merge((  
+  'l-s':      $font-size-base * 1.2, // ~12
+  'l-m':      $font-size-base * 1.3, // ~13
+  'l-l':      $font-size-base * 1.4, // ~14
+  'b-xs':     $font-size-base * 1.3, // ~13
+  'b-s':      $font-size-base * 1.4, // ~14
+  'b-m':      $font-size-base * 1.6, // ~16
+  'b-l':      $font-size-base * 1.6, // ~16
+  'b-xl':     $font-size-base * 1.8, // ~18
+  'h-xxs':    $font-size-base * 1.4, // ~14
+  'h-xs':     $font-size-base * 1.6, // ~16
+  'h-s':      $font-size-base * 1.8, // ~18
+  'h-m':      $font-size-base * 2,   // ~20
+  'h-l':      $font-size-base * 2.4, // ~24
+  'h-xl':     $font-size-base * 2.8, // ~28
+  'h-xxl':    $font-size-base * 3.2, // ~32
+), $font-mobile-sizes);
+
+
+
+$line-heights-desktop: ();
+$line-heights-desktop: map-merge((
+  'l-s':      $font-size-base * 1.56, // 15.6
+  'l-m':      $font-size-base * 1.82, // 18.2
+  'l-l':      $font-size-base * 2.08, // 20.8
+  'b-xs':     $font-size-base * 2.1,  // 21
+  'b-s':      $font-size-base * 2.4,  // 24
+  'b-m':      $font-size-base * 2.7,  // 27
+  'b-l':      $font-size-base * 3,    // 30
+  'b-xl':     $font-size-base * 3.6,  // 36
+  'h-xxs':    $font-size-base * 2.08, // 20.8
+  'h-xs':     $font-size-base * 2.34, // 23.4
+  'h-s':      $font-size-base * 2.6,  // 26
+  'h-m':      $font-size-base * 3.12, // 31.2
+  'h-l':      $font-size-base * 4.68, // 46.8
+  'h-xl':     $font-size-base * 6.76, // 67.6
+  'h-xxl':    $font-size-base * 10.4, // 104
+), $line-heights-desktop);
+
+$line-heights-mobile: ();
+$line-heights-mobile: map-merge((
+  'l-s':      $font-size-base * 1.56, // 15.6
+  'l-m':      $font-size-base * 1.69, // 16.9
+  'l-l':      $font-size-base * 1.82, // 18.2
+  'b-xs':     $font-size-base * 1.95, // 19.5
+  'b-s':      $font-size-base * 2.1,  // 21
+  'b-m':      $font-size-base * 2.4,  // 24
+  'b-l':      $font-size-base * 2.4,  // 24
+  'b-xl':     $font-size-base * 2.7,  // 27
+  'h-xxs':    $font-size-base * 1.82, // 18.2
+  'h-xs':     $font-size-base * 2.08, // 20.8
+  'h-s':      $font-size-base * 2.34, // 23.4
+  'h-m':      $font-size-base * 2.6,  // 26
+  'h-l':      $font-size-base * 3.12, // 31.2
+  'h-xl':     $font-size-base * 3.64, // 36.4
+  'h-xxl':    $font-size-base * 4.16, // 41.6
+), $line-heights-mobile);
+
+//
+// Icons
+//
+$icons-sizes: ();
+$icons-sizes: map-merge((
+  sm:      1.8rem, // ~18
+  md:      2.4rem, // ~24
+  lg:      4.8rem, // ~48
+  xl:      9rem, // ~90
+), $icons-sizes);
+
+//
+// Buttons
+//
+$btn-border-radius:    0;
+$btn-border-radius-sm: 0;
+$btn-border-radius-lg: 0;
+
+
+//
+// Define common padding and border radius sizes and more.
+//
+$border-radius:             0.12rem;  // ~12
+$border-radius-lg:          3.2rem;  // ~32
+$border-radius-sm:          0.6rem;  // ~6
+$border-radius-full:        16rem;  // ~160
+
+//
+// Shadow
+//
+$box-shadow-base:           0px 16px 24px rgba(0, 0, 0, 0.15), 0px 2px 6px rgba(0, 0, 0, 0.05), 0px 0px 1px rgba(0, 0, 0, 0.04);
+$box-shadow-base-sm:        0px 16px 24px rgba(0, 0, 0, 0.1), 0px 2px 6px rgba(0, 0, 0, 0.05);
+
+//
+// Cards
+//
+$card-border-radius:                1em; // ~16
+$card-border-radius-lg:             1.75em; // ~28
+$card-border-radius-sm:             0.75em; // ~12
+$card-box-shadow:                   0px 3px 40px rgba(0, 0, 0, 0.29);
+
+// Card Border radius
+$card-borders-radius: ();
+$card-borders-radius: map-merge((
+  0:                                0,
+  1:                                $card-border-radius-sm,
+  2:                                $card-border-radius,
+  3:                                $card-border-radius-lg,
+  4:                                $border-radius-full,
+), $card-borders-radius);
+
+$transition-base:             all .5s ease-in-out;
+
+// we're using height so we can calculate header height
+$header-logo-height:    2.6rem;
+$md-header-logo-height: 3.5rem;
+$footer-logo-height:    6.9rem;
+$md-footer-logo-height: 6.9rem;
+$hero-btn-width:        11.875rem;
+$front-hero-pt:         18.75rem;
+$front-hero-pb:         spacer(8);
+$hero-opacity:          0.3;
+
+$small-subtitle-font-size:      0.875rem;
+$small-subtitle-line-height:    1.2;
+$small-subtitle-font-weight:    600;
+$small-subtitle-letter-spacing: 0.02rem;
+
+$btn-font-size: 0.875rem;
+$btn-padding-y: 0.6875rem;
+$btn-padding-x: 2.25rem;
+
+$border-radius-full: 10rem;
+$border-radius-md:   1.25rem;
+$border-radius:      4px;
+$border-width:       1px;
+$border-state:       solid;
+$border-color:       rgba(0, 0, 0, 0.04);
+$border:             $border-width $border-state $border-color;
+
+$input-border-radius: 0;
+
+$input-padding-y:          0.9375rem;
+$input-padding-x:          1.125rem;
+$input-border-width:       0.0625rem;
+$input-border-color:       $black;
+$input-font-size:          0.875rem;
+$input-line-height:        1.125rem;
+$input-color:              $black;
+$input-focus-border-color: $input-border-color;
+$input-height-border:      0;
+$input-height:             calc(#{$input-line-height} + #{$input-padding-y * 2});
+
+$episode-products-img-height:    10rem; // 160px
+$md-episode-products-img-height: 12.5rem; // 200px
+
+$blur-basic: 6px;

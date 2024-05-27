@@ -1,0 +1,25 @@
+/* Main column width */
+.wp-block {
+	max-width: none;
+
+	.sfwed_custom_block {
+		zoom: .7;
+	}
+}
+
+.interface-interface-skeleton__content {
+	// importing bootstrap
+	@import "bootstrap/bootstrap-reboot";
+	@import "bootstrap/bootstrap-grid";
+	@import "bootstrap/bootstrap";
+
+	@import "variables";
+	@import "functions";
+	@import "mixins/mixins";
+	@import "type";
+	@import "buttons";
+
+	// Importing styles
+	@import "partials/partials";
+	@import "utilities/utilities";
+}

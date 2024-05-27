@@ -1,0 +1,134 @@
+@mixin font-type-size($key: 2) {
+  font-size: font-mobile-size($key);
+  line-height: line-height-mobile($key);
+
+  // @include media-breakpoint-up(md) {
+  //   font-size: font-tablet-size($key);
+  //   line-height: line-height-tablet($key);
+  // }
+
+  // @include media-breakpoint-up(lg) {
+  //   font-size: font-laptop-size($key);
+  //   line-height: line-height-laptop($key);
+  // }
+
+  @include media-breakpoint-up(xl) {
+    font-size: font-desktop-size($key);
+    line-height: line-height-desktop($key);
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family-base;
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-variation-settings: "slnt" 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include font-type-size(1);
+  color: $black;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-family-base;
+  font-weight: 600;
+  font-style: normal;
+  color: $black;
+
+  &:only-child, &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1, .h1, .type-1 {
+  @include font-type-size(6);
+}
+h2, .h2, .type-2 {
+  @include font-type-size(5);
+}
+h3, .h3, .type-3 {
+  @include font-type-size(4);
+}
+h4, .h4, .type-4 {
+  @include font-type-size(3);
+}
+h5, .h5, .type-5 {
+  @include font-type-size(2);
+}
+h6, .h6, .type-6 {
+  @include font-type-size(1);
+}
+
+.eyebrow {
+  font-family: $font-family-base;
+  font-weight: 700;
+  font-style: normal;
+  color: $primary-1;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  @include media-breakpoint-up(md) {
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-weight: 700;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-weight: 600;
+  }
+}
+
+.pill {
+  font-family: $font-family-base;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: $primary-1;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+}
+
+@each $font-size in map-keys($font-mobile-sizes) {
+  $infix: breakpoint-infix($font-size, $font-mobile-sizes);
+  .font-size#{$infix} { 
+    font-size: font-mobile-size($font-size) !important;
+    line-height: line-height-mobile($font-size) !important; 
+  }
+}
+
+@include media-breakpoint-up(md) {
+  @each $font-size in map-keys($font-desktop-sizes) {
+    $infix: breakpoint-infix($font-size, $font-desktop-sizes);
+    .font-size#{$infix} { 
+      font-size: font-desktop-size($font-size) !important;
+      line-height: line-height-desktop($font-size) !important;
+    }
+  }
+}
+
+@each $color, $value in $colors-typo {
+  .color-#{$color} {
+    color:  $value !important;
+  }
+}
+
+@each $color, $value in $colors-links {
+  .link-#{$color} {
+    @include link-variant($value);
+  }
+}

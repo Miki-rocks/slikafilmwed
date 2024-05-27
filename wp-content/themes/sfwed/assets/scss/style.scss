@@ -1,0 +1,14 @@
+// importing bootstrap
+@import "bootstrap/bootstrap-reboot";
+@import "bootstrap/bootstrap-grid";
+@import "bootstrap/bootstrap";
+
+@import "variables";
+@import "functions";
+@import "mixins/mixins";
+@import "type";
+@import "buttons";
+
+// Importing styles
+@import "partials/partials";
+@import "utilities/utilities";

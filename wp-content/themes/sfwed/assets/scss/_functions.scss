@@ -1,0 +1,43 @@
+@function color($key: "white") {
+  @return map-get($colors, $key);
+}
+
+@function color-primary($key: "slate") {
+  @return map-get($colors-primary, $key);
+}
+
+@function color-secondary($key: "pale") {
+  @return map-get($colors-secondary, $key);
+}
+
+@function color-bg($key: "white") {
+  @return map-get($colors-bg, $key);
+}
+
+@function color-button($key: "light-peach") {
+  @return map-get($colors-button, $key);
+}
+
+@function color-typo($key: 2) {
+  @return map-get($colors-typo, $key);
+}
+
+@function font-laptop-size($key: 2) {
+  @return map-get($font-laptop-sizes, $key);
+}
+
+@function font-desktop-size($key: 2) {
+  @return map-get($font-desktop-sizes, $key);
+}
+
+@function line-height-mobile($key: 2) {
+  @return map-get($line-heights-mobile, $key);
+}
+
+@function line-height-desktop($key: 2) {
+  @return map-get($line-heights-desktop, $key);
+}
+
+@function spacer($key: 3) {
+  @return map-get($spacers, $key);
+}

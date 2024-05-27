@@ -1,0 +1,146 @@
+// stylelint-disable selector-no-qualifying-type
+
+//
+// Base styles
+//
+
+.btn {
+  $this: &;
+
+  display: inline-flex;
+  font-family: $font-family-base;
+  border-radius: 10rem;
+  box-shadow: none;
+
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.8rem;
+  padding: spacer(4) spacer(6);
+
+  @include media-breakpoint-up(md) {
+    font-weight: 800;
+    font-size: 2.4rem;
+    line-height: 3.4rem;
+    padding: spacer(6) spacer(11);
+  }
+
+  &-icon--icon {
+    margin-left: spacer(3);
+    width: auto;
+    height: 2.2rem;
+    display: flex;
+
+    svg {
+      path {
+        fill: inherit;
+        transition: $transition-base;
+      }
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    pointer-events: none;
+    opacity: 1;
+    background-color: rgba($black, 0.2) !important;
+    color: $black !important;
+    border-color: rgba($black, 0.2) !important;
+    transition: $transition-base;
+
+    svg {
+      path {
+        fill: $black !important;
+      }
+    }
+  }
+
+  &,
+  &-primary {
+    @extend .btn-primary-1;
+
+    color: $gray-1 !important;
+  }
+
+  &-secondary {
+    @extend .btn-secondary-1;
+
+    color: $secondary-2 !important;
+
+    &:hover, &:focus, &:active,
+    &.hover, &.focus, &.active {
+      background: $primary-1 !important;
+      border-color: $primary-1 !important;
+      color: $secondary-1 !important;
+    }
+  }
+
+  &-sm {
+    font-weight: 800;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    padding: spacer(3) spacer(5);
+
+    @include media-breakpoint-up(md) {
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+      padding: spacer(4) spacer(5);
+    }
+
+    .btn-icon--icon {
+      margin-left: spacer(2);
+      height: 1.6rem;
+    }
+  }
+
+  @include hover {
+    text-decoration: none;
+  }
+
+  &-link {
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+    background: transparent !important;
+    box-shadow: none;
+
+    span {
+      border: 1px solid $black;
+      border-radius: 10rem;
+      border-radius: 10rem;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      path {
+        fill: $black !important;
+      }
+    }
+
+    svg {
+      padding: 0.3rem;
+    }
+
+    &:hover, &:focus, &:active, &.hover, &.focus, &.active {
+      box-shadow: none;
+    }
+  }
+}
+
+
+//
+// Alternate buttons
+//
+
+@each $color, $value in $colors-button {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+@each $color, $value in $colors-button {
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}
