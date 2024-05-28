@@ -5,10 +5,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-  <meta name="theme-color" content="#DFF9EA" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#007EFF" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f0efee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
   <?php if ( SFWED_ENV == 'production' ) { ?>
     <!-- Google tag (gtag.js) -->

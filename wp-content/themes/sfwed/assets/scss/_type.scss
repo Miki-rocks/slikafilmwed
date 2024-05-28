@@ -29,7 +29,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @include font-type-size(1);
+  @include font-type-size('b-l');
   color: $black;
 }
 
@@ -39,6 +39,7 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 600;
   font-style: normal;
   color: $black;
+  letter-spacing: 1px;
 
   &:only-child, &:last-child {
     margin-bottom: 0;
@@ -46,22 +47,22 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1, .type-1 {
-  @include font-type-size(6);
+  @include font-type-size('h-xxl');
 }
 h2, .h2, .type-2 {
-  @include font-type-size(5);
+  @include font-type-size('h-xl');
 }
 h3, .h3, .type-3 {
-  @include font-type-size(4);
+  @include font-type-size('h-l');
 }
 h4, .h4, .type-4 {
-  @include font-type-size(3);
+  @include font-type-size('h-m');
 }
 h5, .h5, .type-5 {
-  @include font-type-size(2);
+  @include font-type-size(('h-s'));
 }
 h6, .h6, .type-6 {
-  @include font-type-size(1);
+  @include font-type-size('h-xs');
 }
 
 .eyebrow {

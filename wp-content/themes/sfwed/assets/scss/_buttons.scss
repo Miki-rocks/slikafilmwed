@@ -8,20 +8,21 @@
   $this: &;
 
   display: inline-flex;
-  font-family: $font-family-base;
-  border-radius: 10rem;
+  font-family: $font-family-secondary;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  border-radius: 0;
   box-shadow: none;
 
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 2.8rem;
-  padding: spacer(4) spacer(6);
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  padding: spacer(3) spacer(5);
 
   @include media-breakpoint-up(md) {
-    font-weight: 800;
-    font-size: 2.4rem;
-    line-height: 3.4rem;
-    padding: spacer(6) spacer(11);
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    padding: spacer(3) spacer(6);
   }
 
   &-icon--icon {
@@ -58,32 +59,42 @@
   &-primary {
     @extend .btn-primary-1;
 
-    color: $gray-1 !important;
-  }
-
-  &-secondary {
-    @extend .btn-secondary-1;
-
-    color: $secondary-2 !important;
+    color: $black !important;
 
     &:hover, &:focus, &:active,
     &.hover, &.focus, &.active {
-      background: $primary-1 !important;
-      border-color: $primary-1 !important;
-      color: $secondary-1 !important;
+      background: $primary-2 !important;
+      border-color: $primary-2 !important;
+      color: $black !important;
+    }
+  }
+
+  &-secondary {
+    @extend .btn-primary-1;
+
+    color: $black !important;
+    background: transparent !important;
+    border-color: transparent !important;
+    border-bottom: 1px solid $black !important;
+
+    &:hover, &:focus, &:active,
+    &.hover, &.focus, &.active {
+      background: $secondary-2 !important;
+      border-color: $secondary-2 !important;
+      color: $black !important;
     }
   }
 
   &-sm {
-    font-weight: 800;
+    font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.9rem;
     padding: spacer(3) spacer(5);
 
     @include media-breakpoint-up(md) {
-      font-size: 1.8rem;
-      line-height: 2.5rem;
-      padding: spacer(4) spacer(5);
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      padding: spacer(2) spacer(5);
     }
 
     .btn-icon--icon {

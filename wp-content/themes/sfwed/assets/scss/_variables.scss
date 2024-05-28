@@ -33,14 +33,14 @@ $gray-2:       #E7E7E7;
 $gray-1:       #F6F6F6;
 $white:        #FFFFFF;
 
-$primary-1:    #007EFF;
-$primary-2:    #007EFF;
-$secondary-1:  #DFF9EA;
-$secondary-2:  #DFF9EA;
-$tertiary-1:   #E72323;
-$tertiary-2:   #E72323;
-$quaternary-1: #FEF4F4;
-$quaternary-2: #FEF4F4;
+$primary-1:    #f4c9b1;
+$primary-2:    #e0b8a4;
+$secondary-1:  #f0efee;
+$secondary-2:  #dddddd;
+$tertiary-1:   #828369;
+$tertiary-2:   #72725e;
+$quaternary-1: #a9947b;
+$quaternary-2: #998570;
 
 // $red-1:        #E40613;
 // $red-2:        #DB0614;
@@ -137,8 +137,8 @@ $spacers: map-merge(
 //
 $body-color:                            color-typo();
 
-$font-family-primary:                   'Inter', sans-serif;
-$font-family-secondary:                 'Open Sans', sans-serif;
+$font-family-primary:                   "Cormorant", serif;
+$font-family-secondary:                 "Montserrat", sans-serif;
 $font-family-base:                      $font-family-primary;
 
 $font-size-base:              1rem; // ~16px - Default font size defined in _type.scss
@@ -277,10 +277,12 @@ $card-borders-radius: map-merge((
 $transition-base:             all .5s ease-in-out;
 
 // we're using height so we can calculate header height
-$header-logo-height:    2.6rem;
-$md-header-logo-height: 3.5rem;
+$header-logo-height:    5rem;
+$md-header-logo-height: 7rem;
 $footer-logo-height:    6.9rem;
 $md-footer-logo-height: 6.9rem;
+$header-height: 5.6rem;
+$header-height-lg: 10rem;
 $hero-btn-width:        11.875rem;
 $front-hero-pt:         18.75rem;
 $front-hero-pb:         spacer(8);

@@ -1,0 +1,6 @@
+<svg viewBox="0 0 90 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path d="M45 74V115" stroke="white" stroke-width="2"/>
+	<circle cx="45" cy="45" r="44" class="stroked-circle" stroke="#E40613" stroke-width="2"/>
+	<circle cx="45" cy="45" r="30" fill="white"/>
+	<path d="M39 46L45 52M45 52L51 46M45 52V38" stroke="#E40613" stroke-width="2"/>
+</svg>

@@ -22,8 +22,8 @@
   @return map-get($colors-typo, $key);
 }
 
-@function font-laptop-size($key: 2) {
-  @return map-get($font-laptop-sizes, $key);
+@function font-mobile-size($key: 2) {
+  @return map-get($font-mobile-sizes, $key);
 }
 
 @function font-desktop-size($key: 2) {

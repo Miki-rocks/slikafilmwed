@@ -19,7 +19,8 @@ function sfwed_setup() {
 
   register_nav_menus(
     [
-      'primary_navigation' => __( 'Main menu', 'sfwed' ),
+      'primary_navigation_l' => __( 'Main menu - left', 'sfwed' ),
+      'primary_navigation_r' => __( 'Main menu - right', 'sfwed' ),
       'footer_menu' => __( 'Footer menu', 'sfwed' ),
     ]
   );

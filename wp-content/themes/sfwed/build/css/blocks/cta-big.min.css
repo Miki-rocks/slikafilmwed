@@ -1,0 +1,2 @@
+.cta-big__cta_title::before{content:"";position:absolute;display:block;top:-10rem;bottom:-10rem;left:10rem;right:-1000rem;background:#f0efee;z-index:-1}
+/*# sourceMappingURL=cta-big.min.css.map */
