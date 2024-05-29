@@ -1,1 +1,1 @@
-.cta-big__cta_title::before{content:"";position:absolute;display:block;top:-10rem;bottom:-10rem;left:10rem;right:-1000rem;background:#f0efee;z-index:-1}
+.cta-big__background{opacity:0;transform:translateX(-10rem);transition:all .5s ease-in-out}.cta-big__background.inView{opacity:1;transform:translateX(0)}

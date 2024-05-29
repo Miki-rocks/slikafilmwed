@@ -19,7 +19,7 @@ window.addEventListener('load', function() {
                 slidesToScroll: 1,
                 mobileFirst: true,
                 autoplay: true,
-				autoplaySpeed: 3000,
+                autoplaySpeed: 3000,
                 fade: true,
                 cssEase: 'linear',
                 centerMode: true,
@@ -35,16 +35,6 @@ window.addEventListener('load', function() {
                 }],
             });
 
-            // Add an event listener for the 'afterChange' event
-            slider.addEventListener('afterChange', function(event, slick, currentSlide) {
-                var video = heroSlider.querySelector('.homepage-hero .video-native');
-
-                if (currentSlide == 0 && video) {
-                    video.play();
-                } else if (video) {
-                    video.pause();
-                }
-            });
         }
     });
 });

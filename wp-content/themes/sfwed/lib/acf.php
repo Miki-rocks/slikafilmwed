@@ -75,7 +75,26 @@ function sfwed_acf_custom_blocks_init() {
 			'supports'          => array(
 				'align' => false,
 				'anchor' => true,
-				'multiple' => false,
+				'multiple' => true,
+			),
+			'mode' => 'auto',
+		));
+
+		acf_register_block_type(array(
+			'name'              => 'text-boxes',
+			'title'             => __('Text boxes'),
+			'description'       => __('A Text boxes section.'),
+			'post_types'        => array('post', 'page'),
+			'render_template'   => 'templates/blocks/block-text-boxes.php',
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('text-boxes', get_template_directory_uri() . '/build/css/blocks/text-boxes.min.css');
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => true,
 			),
 			'mode' => 'auto',
 		));
@@ -92,6 +111,7 @@ function sfwed_allowed_blocks($allowed_blocks)
 	$allowedBlocksArray = array(
 		'acf/homepage-hero',
 		'acf/cta-big',
+		'acf/text-boxes',
 	);
 
 	return $allowedBlocksArray;

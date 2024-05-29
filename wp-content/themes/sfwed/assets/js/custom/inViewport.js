@@ -12,4 +12,10 @@ $(window).on("load resize scroll", function () {
             $(this).addClass('inView');
         }
     });
+
+    $('.bg-el--right, .bg-el--left').each(function() {
+        if ( $(this).isInViewport() ) {
+            $(this).addClass('inView');
+        }
+    });
 });

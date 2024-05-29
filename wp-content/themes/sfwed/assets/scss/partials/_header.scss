@@ -10,6 +10,7 @@
 	transition: $transition-base;
 
 	&-logo_wrap {
+
 		&-logo {
 
 			font-size: 0; // if this is not set, the logo has some spacing on top of itself
@@ -26,6 +27,7 @@
 				.sfwed_logo {
 					height: $header-logo-height;
 					width: auto;
+					max-width: 100%;
 
 					@include media-breakpoint-up(lg) {
 						height: $md-header-logo-height;

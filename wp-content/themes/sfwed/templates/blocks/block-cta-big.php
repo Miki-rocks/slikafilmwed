@@ -23,7 +23,7 @@ if (!array_filter($data)) {
 $baseClass = 'cta-big';
 ?>
 
-<section class="sfwed-section <?php echo $baseClass; ?> overflow-hidden my-8 my-lg-10 pb-12 pb-lg-14" <?php echo (isset($block['anchor']) && !empty($block['anchor'])) ? 'id="' . $block['anchor'] . '"' : '' ; ?>>
+<section class="sfwed-section <?php echo $baseClass; ?> overflow-hidden my-8 my-lg-10 pb-12 pb-lg-12" <?php echo (isset($block['anchor']) && !empty($block['anchor'])) ? 'id="' . $block['anchor'] . '"' : '' ; ?>>
 
 	<div class="container">
 		<div class="row">
@@ -34,10 +34,10 @@ $baseClass = 'cta-big';
 				<div class="<?php echo $baseClass; ?>__text font-size-b-m mb-8 mb-lg-13"><?php echo $data['text']; ?></div>
 			</div>
 		</div>
-		<div class="row position-relative">
+		<div class="row bg-el--right">
 			<div class="col-12 col-lg-6">
-				<div class="<?php echo $baseClass; ?>__background">
-					<?php echo wp_get_attachment_image($data['image'], 'full', '', ['class' => 'homepage-hero-img', 'cta_title' => $data['cta_title']] ); ?>
+				<div class="<?php echo $baseClass; ?>__background animateOnEnter">
+					<?php echo wp_get_attachment_image($data['image'], 'full', '', ['class' => 'homepage-hero-img', 'title' => $data['cta_title']] ); ?>
 				</div>
 			</div>
 			<div class="col-12 col-lg-5">

@@ -19,7 +19,7 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 1240px,
-  xl: 1320px
+  xl: 1440px
 );
 
 //
@@ -82,6 +82,7 @@ $colors-typo: ();
 $colors-typo: map-merge((
   "black":          $black,
   "white":          $white,
+  "tertiary-1":     $tertiary-1,
 ), $colors-typo);
 
 $colors-bg: ();
@@ -90,6 +91,7 @@ $colors-bg: map-merge((
   "secondary-1":    $secondary-1,
   "tertiary-1":     $tertiary-1,
   "quaternary-1":   $quaternary-1,
+  "gray-1":         $gray-1,
 ), $colors-bg);
 
 $colors-button: ();
