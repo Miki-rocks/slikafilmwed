@@ -1,0 +1,31 @@
+@import "blocks";
+
+.masonry-grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -1px;
+	width: auto;
+
+	.grid-item {
+		padding-left: 1px;
+		margin-bottom: 1px;
+	}
+
+	.grid-sizer,
+	.grid-item {
+		width: 100%;
+	}
+
+	@include media-breakpoint-up(lg) {
+		.grid-sizer,
+		.grid-item {
+			width: 50%;
+		}
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+}

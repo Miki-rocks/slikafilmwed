@@ -31,7 +31,7 @@ $baseClass = 'cta-big';
 				<h1 class="<?php echo $baseClass; ?>__title font-size-h-xl mb-8"><?php echo $data['title']; ?></h1>
 			</div>
 			<div class="col-12 col-lg-8 offset-lg-2">
-				<div class="<?php echo $baseClass; ?>__text font-size-b-m mb-8 mb-lg-13"><?php echo $data['text']; ?></div>
+				<div class="<?php echo $baseClass; ?>__text font-size-b-m mb-8 mb-lg-15"><?php echo $data['text']; ?></div>
 			</div>
 		</div>
 		<div class="row bg-el--right">

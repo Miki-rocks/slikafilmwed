@@ -5,9 +5,13 @@
 	&__logo-wrap {
 		&__logo {
 			.sfwed_logo {
-				height: $md-footer-logo-height;
+				height: $footer-logo-height;
 				width: auto;
 				max-width: 100%;
+
+				@include media-breakpoint-up(lg) {
+					height: $md-footer-logo-height;
+				}
 
 				path {
 					// fill: $white;

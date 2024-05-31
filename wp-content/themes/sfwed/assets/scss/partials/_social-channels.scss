@@ -1,21 +1,21 @@
 .social_channels {
 	svg {
-		width: 6.4rem;
-		height: 6.4rem;
+		width: 4rem;
+		height: 4rem;
 		margin-left: spacer(2);
 		margin-right: spacer(2);
 
 		path {
-			fill: $white;
+			fill: $gray-5;
 		}
 
 		rect {
-			stroke: $white;
+			stroke: $gray-5;
 		}
 
 		@include media-breakpoint-up(md) {
-			width: 4rem;
-			height: 4rem;
+			width: 3.2rem;
+			height: 3.2rem;
 			margin-left: spacer(4);
 			margin-right: 0;
 		}

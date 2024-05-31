@@ -1,0 +1,1 @@
+.masonry-grid{display:flex;flex-wrap:wrap;margin-left:-1px;width:auto}.masonry-grid .grid-item{padding-left:1px;margin-bottom:1px}.masonry-grid .grid-sizer,.masonry-grid .grid-item{width:100%}@media(min-width: 1024px){.masonry-grid .grid-sizer,.masonry-grid .grid-item{width:50%}}.masonry-grid img{width:100%;height:auto;display:block}

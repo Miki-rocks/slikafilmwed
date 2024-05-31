@@ -1,5 +1,5 @@
-<div class="social_channels d-flex flex-column h-100 justify-content-center align-self-md-end">
-	<div class="social_channels-icons_wrap d-flex flex-wrap justify-content-center justify-content-md-end">
+<div class="social_channels d-flex flex-column my-10">
+	<div class="social_channels-icons_wrap d-flex flex-wrap justify-content-center">
 
 		<?php if ( get_field( 'facebook_profile_url', 'options' ) ) : ?>
 			<div class="social_channels-icons_wrap-icon">
@@ -11,7 +11,7 @@
 			</div>
 		<?php endif; ?>
 
-		<?php /* if ( get_field( 'youtube_profile_url', 'options' ) ) : ?>
+		<?php if ( get_field( 'youtube_profile_url', 'options' ) ) : ?>
 			<div class="social_channels-icons_wrap-icon">
 				<a href="<?php the_field( 'youtube_profile_url', 'options' ); ?>" class="social_channels-icons_wrap-icon-link social_channels-youtube d-block" target="_blank">
 					<div class="social_channels-icons_wrap-back d-flex justify-content-center align-items-center">
@@ -19,7 +19,7 @@
 					</div>
 				</a>
 			</div>
-		<?php endif; */ ?>
+		<?php endif; ?>
 
 		<?php if ( get_field( 'linkedin_profile_url', 'options' ) ) : ?>
 			<div class="social_channels-icons_wrap-icon">
@@ -31,7 +31,7 @@
 			</div>
 		<?php endif; ?>
 
-		<?php /* if ( get_field( 'instagram_profile_url', 'options' ) ) : ?>
+		<?php if ( get_field( 'instagram_profile_url', 'options' ) ) : ?>
 			<div class="social_channels-icons_wrap-icon">
 				<a href="<?php the_field( 'instagram_profile_url', 'options' ); ?>" class="social_channels-icons_wrap-icon-link social_channels-instagram d-block" target="_blank">
 					<div class="social_channels-icons_wrap-back d-flex justify-content-center align-items-center">
@@ -39,7 +39,7 @@
 					</div>
 				</a>
 			</div>
-		<?php endif; */ ?>
+		<?php endif; ?>
 
 	</div>
 </div>

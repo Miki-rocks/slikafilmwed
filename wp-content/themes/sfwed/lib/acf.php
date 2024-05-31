@@ -98,6 +98,51 @@ function sfwed_acf_custom_blocks_init() {
 			),
 			'mode' => 'auto',
 		));
+
+		acf_register_block_type(array(
+			'name'              => 'gallery',
+			'title'             => __('Gallery'),
+			'description'       => __('A Gallery section.'),
+			'post_types'        => array('post', 'page', 'portfolio'),
+			'render_template'   => 'templates/blocks/block-gallery.php',
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('gallery', get_template_directory_uri() . '/build/css/blocks/gallery.min.css');
+
+				wp_enqueue_style('lightgallery', get_template_directory_uri() . '/build/css/blocks/lightgallery.min.css');
+				wp_enqueue_script('lightgallery', get_template_directory_uri() . '/assets/js/lib/lightgallery.min.js', array('jquery'), '', true);
+
+				wp_enqueue_script('masonry', get_template_directory_uri() . '/assets/js/lib/masonry.min.js', array('jquery'), '', true);
+				
+				wp_enqueue_script('gallery', get_template_directory_uri() . '/build/scripts/blocks/gallery.js', array('jquery', 'lightgallery', 'masonry'), '', true);
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => false,
+			),
+			'mode' => 'auto',
+		));
+
+		acf_register_block_type(array(
+			'name'              => 'portfolio-grid',
+			'title'             => __('Portfolio grid'),
+			'description'       => __('A Portfolio grid section.'),
+			'post_types'        => array('post', 'page'),
+			'render_template'   => 'templates/blocks/block-portfolio-grid.php',
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('portfolio-grid', get_template_directory_uri() . '/build/css/blocks/portfolio-grid.min.css');
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => true,
+			),
+			'mode' => 'auto',
+		));
 	}
 }
 add_action('acf/init', 'sfwed_acf_custom_blocks_init');
@@ -112,6 +157,8 @@ function sfwed_allowed_blocks($allowed_blocks)
 		'acf/homepage-hero',
 		'acf/cta-big',
 		'acf/text-boxes',
+		'acf/gallery',
+		'acf/portfolio-grid',
 	);
 
 	return $allowedBlocksArray;
