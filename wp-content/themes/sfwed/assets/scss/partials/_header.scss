@@ -45,7 +45,9 @@
 					display: flex;
 					align-items: center;
 					// justify-content: space-between;
-					font-weight: 700;
+					font-family: $font-family-secondary;
+					font-weight: 200;
+					// font-weight: 700;
 					font-size: 1.6rem;
 					line-height: 2.24rem;
 					color: $black;
@@ -55,17 +57,17 @@
 					&.focus,
 					&:focus,
 					&.current-menu-item {
-						color: $primary-1;
+						color: $tertiary-1;
 						text-decoration: none;
 						outline: none;
 
 						.icon {
 							svg {
 								
-								border-color: $primary-1;
+								border-color: $tertiary-1;
 								
 								path {
-									fill: $primary-1;
+									fill: $tertiary-1;
 								}
 							}
 						}
@@ -161,7 +163,7 @@
 
 			&-list {
 
-				padding-bottom: spacer(13);
+				// padding-bottom: spacer(13);
 
 				.primary-navigation__item {
 					display: flex;
@@ -170,7 +172,7 @@
 					.primary-navigation__link {
 						font-size: 2.4rem;
 						line-height: 2.4rem;
-						font-weight: 700;
+						font-weight: 200;
 						padding: spacer(3) calc( $grid-gutter-width / 2 );
 						color: $black;
 
@@ -319,11 +321,11 @@
 								content: '';
 								display: block;
 								position: absolute;
-								top: 0;
+								bottom: 0;
 								left: 0;
 								right: 0;
-								height: 4px;
-								background: $primary-1;
+								height: 1px;
+								background: $tertiary-1;
 							}
 						}
 					}

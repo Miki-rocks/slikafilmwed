@@ -7,10 +7,12 @@
 
 		path {
 			fill: $gray-5;
+			transition: $transition-base;
 		}
 
 		rect {
 			stroke: $gray-5;
+			transition: $transition-base;
 		}
 
 		@include media-breakpoint-up(md) {
@@ -18,6 +20,20 @@
 			height: 3.2rem;
 			margin-left: spacer(4);
 			margin-right: 0;
+		}
+	}
+
+	a {
+		&:hover {
+			svg {
+				path {
+					fill: $black;
+				}
+
+				rect {
+					stroke: $black;
+				}
+			}
 		}
 	}
 }

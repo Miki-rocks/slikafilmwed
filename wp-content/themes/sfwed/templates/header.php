@@ -43,7 +43,7 @@
             </a>
           </div>
           <nav class="d-flex flex-column flex-lg-row align-items-lg-center w-100 h-100 h-lg-auto">
-            <ul class="site-navigation-list d-flex d-lg-none flex-column flex-lg-row justify-content-start align-items-lg-center list-unstyled mb-lg-0 px-3 px-lg-0">
+            <ul class="site-navigation-list d-flex d-lg-none flex-column flex-lg-row justify-content-start align-items-lg-center list-unstyled mb-0 px-3 px-lg-0">
               <?php
               $top_menu = wp_nav_menu(
                 [

@@ -143,6 +143,28 @@ function sfwed_acf_custom_blocks_init() {
 			),
 			'mode' => 'auto',
 		));
+
+		acf_register_block_type(array(
+			'name'              => 'testimonials',
+			'title'             => __('Testimonials'),
+			'description'       => __('A testimonials section.'),
+			'post_types'        => array('post', 'page'),
+			'render_template'   => 'templates/blocks/block-testimonials.php',
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('slick', get_template_directory_uri() . '/build/css/blocks/slick.min.css');
+				wp_enqueue_style('testimonials', get_template_directory_uri() . '/build/css/blocks/testimonials.min.css');
+				wp_enqueue_script('slick', get_template_directory_uri() . '/assets/js/lib/slick.min.js', array('jquery'), '', true);
+				wp_enqueue_script('testimonials', get_template_directory_uri() . '/build/scripts/blocks/testimonials.js', array('jquery', 'slick'), '', true);
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => false,
+			),
+			'mode' => 'auto',
+		));
 	}
 }
 add_action('acf/init', 'sfwed_acf_custom_blocks_init');
@@ -159,6 +181,7 @@ function sfwed_allowed_blocks($allowed_blocks)
 		'acf/text-boxes',
 		'acf/gallery',
 		'acf/portfolio-grid',
+		'acf/testimonials',
 	);
 
 	return $allowedBlocksArray;
