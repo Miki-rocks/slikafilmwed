@@ -1,3 +1,113 @@
 @import "blocks";
 
-.testimonials {}
+.testimonials {
+    &__slider {
+		&-photo {
+			.slick-slide {
+				position: relative !important;
+				overflow: hidden;
+				display: block !important;
+				height: 0;
+				padding-bottom: 30%;
+				transition: $transition-base !important;
+
+				transform: scale(0.9);
+				transform-origin: bottom;
+				top: 0rem !important;
+				opacity: 0 !important;
+				z-index: 996 !important;
+
+				img {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 100%;
+					height: 100%;
+					min-width: 100%;
+					min-height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			.slick-track {
+				& > .slick-slide.slick-active:first-child {
+					// first
+					transform: scale(1);
+					transform-origin: bottom;
+					top: 1.6rem !important;
+					z-index: 999 !important;
+					opacity: 1 !important;
+
+					& + .slick-slide {
+						// second
+						transform: scale(0.98);
+						transform-origin: bottom;
+						// top: -0.8rem !important;
+						opacity: 1 !important;
+						z-index: 998 !important;
+
+						& + .slick-slide {
+							// third
+							transform: scale(0.96) !important;
+							transform-origin: bottom;
+							top: -1.6rem !important;
+							opacity: 1 !important;
+							z-index: 997 !important;
+
+							& ~ .slick-slide {
+								
+							}
+						}
+					}
+				}
+
+				& > .slick-slide.slick-active:not(:first-child) {
+					// first
+					transform: scale(1);
+					transform-origin: bottom;
+					top: 1.6rem !important;
+					z-index: 999 !important;
+					opacity: 1 !important;
+				}
+
+				.next-slide {
+					// second
+					transform: scale(0.98);
+					transform-origin: bottom;
+					// top: -0.8rem !important;
+					opacity: 1 !important;
+					z-index: 998 !important;
+				}
+
+				.second-next-slide {
+					// third
+					transform: scale(0.96);
+					transform-origin: bottom;
+					top: -1.6rem !important;
+					opacity: 1 !important;
+					z-index: 997 !important;
+				}
+
+				// & > .slick-slide:not(.slick-active):not(.next-slide):not(.second-next-slide) {
+				// 	transform: scale(0.9);
+				// 	transform-origin: bottom;
+				// 	top: 0rem !important;
+				// 	opacity: 0 !important;
+				// 	z-index: 996 !important;
+				// }
+			}
+		}
+
+		&-text {
+			.slick-slide {
+				opacity: 0 !important;
+				transition: $transition-base;
+
+				&.slick-active {
+					opacity: 1 !important;
+				}
+			}
+		}
+	}
+}

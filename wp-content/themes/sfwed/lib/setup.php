@@ -17,7 +17,7 @@ function sfwed_setup() {
 
   add_image_size( 'hero-hd', 1920, 1080 );
   add_image_size( 'grid-hd', 720, 1100, false );
-  add_image_size( 'footer', 720, 1100, true );
+  add_image_size( 'footer', 171, 276, true );
 
   register_nav_menus(
     [
