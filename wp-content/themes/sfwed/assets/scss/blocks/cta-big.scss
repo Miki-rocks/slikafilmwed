@@ -3,12 +3,12 @@
 .cta-big {
 	&__background {
 		opacity: 0;
-		transform: translateX(-10rem);
+		transform: scale(0.9);
 		transition: $transition-base;
 
 		&.inView {
 			opacity: 1;
-			transform: translateX(0);
+			transform: scale(1);
 		}
 	}
 }

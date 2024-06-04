@@ -13,8 +13,12 @@ if (isset($args) && !empty($args)) {
 	}
 }
 
-if (!array_filter($data)) {
-	return;
+// if (!array_filter($data)) {
+// 	return;
+// }
+
+if (!isset($data['title']) || empty($data['title'])) {
+	$data['title'] = '';
 }
 
 $baseClass = 'gallery';

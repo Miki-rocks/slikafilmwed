@@ -173,16 +173,32 @@ add_action('acf/init', 'sfwed_acf_custom_blocks_init');
  * Allow only specific Gutenberg blocks
  */
 add_filter('allowed_block_types_all', 'sfwed_allowed_blocks');
-function sfwed_allowed_blocks($allowed_blocks)
+function sfwed_allowed_blocks($allowedBlocks)
 {
-	$allowedBlocksArray = array(
-		'acf/homepage-hero',
-		'acf/cta-big',
-		'acf/text-boxes',
-		'acf/gallery',
-		'acf/portfolio-grid',
-		'acf/testimonials',
-	);
+	if (get_post_type() == 'post') {
+		$allowedBlocks = array(
+			'core/paragraph',
+			'core/quote',
+			'core/table',
+			'core/heading',
+			'core/subhead',
+			'core/spacer',
+			'core/embed',
+			'core/list',
+			'core/list-item',
+			'core/image',
+			'acf/gallery',
+		);
+	} else {
+		$allowedBlocks = array(
+			'acf/homepage-hero',
+			'acf/cta-big',
+			'acf/text-boxes',
+			'acf/gallery',
+			'acf/portfolio-grid',
+			'acf/testimonials',
+		);
+	}
 
-	return $allowedBlocksArray;
+	return $allowedBlocks;
 }

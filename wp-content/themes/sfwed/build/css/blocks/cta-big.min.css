@@ -1,2 +1,2 @@
-.cta-big__background{opacity:0;transform:translateX(-10rem);transition:all .5s ease-in-out}.cta-big__background.inView{opacity:1;transform:translateX(0)}
+.cta-big__background{opacity:0;transform:scale(.9);transition:all .5s ease-in-out}.cta-big__background.inView{opacity:1;transform:scale(1)}
 /*# sourceMappingURL=cta-big.min.css.map */

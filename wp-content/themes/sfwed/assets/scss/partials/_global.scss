@@ -122,6 +122,13 @@ body.mobile-nav-open {
 			opacity: 0;
 			transition: $transition-base;
 		}
+
+		&.low {
+			&::before {
+				top: 15rem;
+				bottom: -10rem;
+			}
+		}
 	}
 
 	&--left {
@@ -129,6 +136,17 @@ body.mobile-nav-open {
 			left: -1000rem;
 			right: 10rem;
 			transform: translateX(-10rem);
+		}
+
+		&.wide {
+			&::before {
+
+				right: 8rem;
+
+				@include media-breakpoint-up(lg) {
+					right: 2rem;
+				}
+			}
 		}
 
 		&.inView {
@@ -144,6 +162,17 @@ body.mobile-nav-open {
 			left: 10rem;
 			right: -1000rem;
 			transform: translateX(10rem);
+		}
+
+		&.wide {
+			&::before {
+
+				left: 8rem;
+
+				@include media-breakpoint-up(lg) {
+					left: 2rem;
+				}
+			}
 		}
 
 		&.inView {

@@ -1,11 +1,28 @@
 @import "blocks";
 
 .testimonials {
+
     &__slider {
 		&-photo {
+
+			.slick-list {
+				overflow: visible;
+			}
+
+			&:not(.slick-initialized) {
+				& > div {
+					display: none;
+
+					&:first-child {
+						display: block;
+						margin-bottom: spacer(8);
+					}
+				}
+			}
+
 			.slick-slide {
 				position: relative !important;
-				overflow: hidden;
+				// overflow: hidden;
 				display: block !important;
 				height: 0;
 				padding-bottom: 30%;
@@ -107,6 +124,100 @@
 				&.slick-active {
 					opacity: 1 !important;
 				}
+			}
+
+			&:not(.slick-initialized) {
+				& > div {
+					display: none;
+
+					&:first-child {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+	&__arrows {
+
+		.button-dot {
+			&::before {
+				content: '';
+				position: absolute;
+				display: flex;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 2px;
+				height: 2px;
+				background: $black;
+				border-radius: 10rem;
+			}
+		}
+
+		button {
+
+			background: transparent;
+			border: none;
+			position: relative;
+
+			&.prevArrow {
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%;
+					right: 0.5rem;
+					transform: translateY(-50%);
+					width: 2rem;
+					height: 1px;
+					background: $black;
+					opacity: 0;
+					transition: $transition-base;
+				}
+			}
+			
+			&.nextArrow {
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 0.5rem;
+					transform: translateY(-50%);
+					width: 2rem;
+					height: 1px;
+					background: $black;
+					opacity: 0;
+					transition: $transition-base;
+				}
+			}
+
+			&:hover {
+
+				background: transparent !important;
+
+				&.prevArrow {
+					&::before {
+						right: 1.1rem;
+						opacity: 1;
+					}
+				}
+				
+				&.nextArrow {
+					&::before {
+						left: 1.1rem;
+						opacity: 1;
+					}
+				}
+			}
+
+			&:focus, &:active {
+				background: transparent !important;
+			}
+
+			.icon {
+				margin: 0 !important;
 			}
 		}
 	}

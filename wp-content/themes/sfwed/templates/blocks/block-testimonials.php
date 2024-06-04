@@ -35,7 +35,7 @@ $baseClass = 'testimonials';
 			</div>
 		</div>
 
-        <div class="row">
+        <div class="row bg-el--left low wide">
             
             <div class="col-12 col-lg-4 offset-lg-2 order-lg-2">
                 <div class="<?php echo $baseClass; ?>__slider-photo mb-8 mb-lg-0">
@@ -59,8 +59,35 @@ $baseClass = 'testimonials';
 				</div>
 
 				<div class="<?php echo $baseClass; ?>__arrows mb-8">
-					<button class="<?php echo $baseClass; ?>__arrow prevArrow"><</button>
-					<button class="<?php echo $baseClass; ?>__arrow nextArrow">></button>
+					<div class="position-relative d-flex justify-content-center justify-content-lg-start ml-lg-n6">
+						<?php get_template_part(
+							'templates/components/button',
+							null,
+							[
+								'type' => 'button',
+								'classes' => $baseClass . '__arrow prevArrow btn',
+								'text' => '',
+								'size' => '',
+								'icon' => 'icon-chevron-left',
+								'icon-position' => 'right',
+							]
+						); ?>
+
+						<div class="button-dot position-relative mx-4"></div>
+
+						<?php get_template_part(
+							'templates/components/button',
+							null,
+							[
+								'type' => 'button',
+								'classes' => $baseClass . '__arrow nextArrow btn',
+								'text' => '',
+								'size' => '',
+								'icon' => 'icon-chevron-right',
+								'icon-position' => 'right',
+							]
+						); ?>
+					</div>
 				</div>
 
                 <div class="<?php echo $baseClass; ?>__slider-text">
@@ -73,13 +100,36 @@ $baseClass = 'testimonials';
 							}
 							?>
                             <div class=""><?php echo get_field('testimonial_text', $testimonial); ?></div>
-                            <p class="mb-0"><?php echo $testimonial_author; ?></p>
+                            <p class="font-weight-200 font-family-secondary mt-4 mt-lg-10 mb-4"><?php echo $testimonial_author; ?></p>
                         </div>
                     <?php } ?>
                 </div>
             </div>
 
         </div>
+
+		<?php if (isset($data['button']) && !empty($data['button'])) { ?>
+			<div class="row">
+				<div class="col-12">
+					<div class="text-center">
+						<?php get_template_part(
+							'templates/components/button',
+							null,
+							[
+								'type' => 'a',
+								'classes' => 'btn-primary mt-8 mt-lg-12',
+								'text' => $data['button']['title'],
+								'link' => $data['button']['url'],
+								'target' => $data['button']['target'],
+								'size' => '',
+								'icon' => 'icon-chevron-right',
+								'icon-position' => 'right',
+							]
+						); ?>
+					</div>
+				</div>
+			</div>
+		<?php } ?>
 
     </div>
 </section>

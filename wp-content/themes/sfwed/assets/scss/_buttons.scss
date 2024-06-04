@@ -25,16 +25,18 @@
     padding: spacer(3) spacer(6);
   }
 
-  &-icon--icon {
-    margin-left: spacer(3);
-    width: auto;
-    height: 2.2rem;
-    display: flex;
-
-    svg {
-      path {
-        fill: inherit;
-        transition: $transition-base;
+  &-icon {
+    .icon {
+      margin-left: spacer(3);
+      width: auto;
+      height: 2.2rem;
+      display: flex;
+  
+      svg {
+        path {
+          fill: $black;
+          transition: $transition-base;
+        }
       }
     }
   }

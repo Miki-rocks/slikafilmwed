@@ -35,13 +35,13 @@ if (!empty($args['button-type'])) {
 <<?php echo $args['type']; ?> <?php echo ( $args['type'] == 'button' ) ? 'title="' . $args['text'] . '"' : '' ; ?> <?php echo $type; echo ( $args['id'] != '' ) ? ' id="' . $args['id'] . '" ' : ' ' ; echo ($args['type'] == 'a') ? 'href="' . $args['link'] . '"' : ''; ?> class="btn <?php echo $args['classes']; ?> btn-<?php echo $args['size']; ?> <?php echo ($args['icon']) ? 'btn-icon' : ''; ?> <?php echo $args['text-align']; ?>" <?php echo ($args['type'] == 'a') ? ($args['target'] == '_self') ? '' : 'target="' . $args['target'] . '"' : ''; ?> <?php echo ($args['type'] == 'a') ?  ($args['rel'] != '') ? 'rel="' . $args['rel'] . '"' : '' : ''; ?> <?php echo $args['other-data-attributes'] ?>>
 	<?php if ($args['icon-position'] == 'left') { ?>
 		<?php if ($args['icon']) { ?>
-			<span class="mr-3 d-flex"><?php echo sfwed_render_svg($args['icon'], 'icons'); ?></span>
+			<span class="icon mr-3 d-flex"><?php echo sfwed_render_svg($args['icon'], 'icons'); ?></span>
 		<?php } ?>
 		<span class="text"><?php printf('%s', esc_html__($args['text'], 'sfwed')); ?></span>
 	<?php } else { ?>
 		<span class="text"><?php printf('%s', esc_html__($args['text'], 'sfwed')); ?></span>
 		<?php if ($args['icon']) { ?>
-			<span class="ml-3 d-flex"><?php echo sfwed_render_svg($args['icon'], 'icons'); ?></span>
+			<span class="icon ml-3 d-flex"><?php echo sfwed_render_svg($args['icon'], 'icons'); ?></span>
 		<?php } ?>
 	<?php } ?>
 </<?php echo $args['type']; ?>>
