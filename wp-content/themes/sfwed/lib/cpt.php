@@ -25,7 +25,7 @@ function sfwed_custom_post_type_register()
 		'description'         => __('Portfolio', 'sfwed'),
 		'labels'              => $labels,
 		'supports'            => array('title', 'excerpt', 'thumbnail', 'custom-fields',),
-		'taxonomies'          => array('category'),
+		'taxonomies'          => array('portfolio-category'),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
@@ -44,5 +44,32 @@ function sfwed_custom_post_type_register()
 
 	// Registering your Custom Post Type
 	register_post_type('portfolio', $args);
+
+
+
+	$portfolio_categories_lables = array(
+		'name' => _x( 'Portfolio categories', 'taxonomy general name' ),
+		'singular_name' => _x( 'Portfolio category', 'taxonomy singular name' ),
+		'search_items' =>  __( 'Search Portfolio categories' ),
+		'all_items' => __( 'All Portfolio categories' ),
+		'parent_item' => __( 'Parent Portfolio category' ),
+		'parent_item_colon' => __( 'Parent Portfolio category:' ),
+		'edit_item' => __( 'Edit Portfolio category' ), 
+		'update_item' => __( 'Update Portfolio category' ),
+		'add_new_item' => __( 'Add New Portfolio category' ),
+		'new_item_name' => __( 'New Portfolio category Name' ),
+		'menu_name' => __( 'Portfolio categories' ),
+	);
+
+	$args_portfolio_category = array(
+		'hierarchical' => true,
+		'labels' => $portfolio_categories_lables,
+		'show_ui' => true,
+		'show_in_rest' => true,
+		'show_admin_column' => true,
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'portfolio-category' ),
+	);
+	register_taxonomy('portfolio-category',array('portfolio'), $args_portfolio_category);
 }
 add_action('init', 'sfwed_custom_post_type_register', 0);

@@ -8,11 +8,9 @@ $share_excerpt = get_the_excerpt();
 ?>
 
 <section class="single_content">
-	
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-lg-8">
-				
 				<article>
 					<?php if (is_singular('post')) {
 						get_template_part(
@@ -36,8 +34,8 @@ $share_excerpt = get_the_excerpt();
                     <div class="tag-cloud">
                         <h3 class="font-size-h-s mb-4"><?php _e('Similar by tags', 'sfwed'); ?></h3>
                         <?php foreach($post_tags as $tag) : ?>
-                            <a href="<?php echo get_tag_link($tag->term_id); ?>" class="tag-link-<?php echo $tag->term_id; ?> btn btn-primary btn-sm" title="<?php echo $tag->name; ?>">
-                                <?php echo $tag->name; ?>
+                            <a href="<?php echo esc_url(get_tag_link($tag->term_id)); ?>" class="tag-link-<?php echo esc_attr($tag->term_id); ?> btn btn-secondary btn-sm" title="<?php echo esc_attr($tag->name); ?>" aria-label="<?php echo esc_attr($tag->name); ?>">
+                                <?php echo esc_html($tag->name); ?>
                             </a>
                         <?php endforeach; ?>
                     </div>
@@ -50,9 +48,9 @@ $share_excerpt = get_the_excerpt();
 							<?php 
 							$prev_post = get_previous_post();
 							if (!empty($prev_post)): ?>
-								<a href="<?php echo get_permalink($prev_post->ID); ?>" class="d-flex flex-column text-center text-lg-left mb-8 mb-lg-0">
-									<span class="post-prev-next-nav-label font-size-b-s">Older post:</span>
-									<span class="post-prev-next-nav-title font-size-b-xl"><?php echo get_the_title($prev_post->ID); ?></span>
+								<a href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>" class="d-flex flex-column text-center text-lg-left mb-8 mb-lg-0" aria-label="<?php _e('Older post:', 'sfwed'); ?>">
+									<span class="post-prev-next-nav-label font-size-b-s"><?php _e('Older post:', 'sfwed'); ?></span>
+									<span class="post-prev-next-nav-title font-size-b-xl"><?php echo esc_html(get_the_title($prev_post->ID)); ?></span>
 								</a>
 							<?php endif; ?>
 						</div>
@@ -60,9 +58,9 @@ $share_excerpt = get_the_excerpt();
 							<?php 
 							$next_post = get_next_post();
 							if (!empty($next_post)): ?>
-								<a href="<?php echo get_permalink($next_post->ID); ?>" class="d-flex flex-column text-center text-lg-right">
-									<span class="post-prev-next-nav-label font-size-b-s">Newer post:</span>
-									<span class="post-prev-next-nav-title font-size-b-xl"><?php echo get_the_title($next_post->ID); ?></span>
+								<a href="<?php echo esc_url(get_permalink($next_post->ID)); ?>" class="d-flex flex-column text-center text-lg-right" aria-label="<?php _e('Newer post:', 'sfwed'); ?>">
+									<span class="post-prev-next-nav-label font-size-b-s"><?php _e('Newer post:', 'sfwed'); ?></span>
+									<span class="post-prev-next-nav-title font-size-b-xl"><?php echo esc_html(get_the_title($next_post->ID)); ?></span>
 								</a>
 							<?php endif; ?>
 						</div>
@@ -85,7 +83,7 @@ $share_excerpt = get_the_excerpt();
 							'post__not_in' => array( $post_id ),
 							'posts_per_page' => 5, // Number of related posts to display
 							'ignore_sticky_posts' => 1,
-							'orderby' => 'date', // Random order
+							'orderby' => 'date', // Order by date
 							'tax_query' => array(
 								'relation' => 'OR',
 								array(
@@ -108,7 +106,6 @@ $share_excerpt = get_the_excerpt();
 									'id' => $post_id,
 									'title' => get_the_title($post_id),
 									'link' => get_permalink($post_id),
-									// 'text' => join( ', ', $term_links ),
 									'image_id' => get_post_thumbnail_id($post_id),
 									'color' => 'color-tertiary-1',
 								);
@@ -125,8 +122,6 @@ $share_excerpt = get_the_excerpt();
 			</div>
 		</div>
 	</div>
-
 </section>
-
 
 <?php endwhile; ?>

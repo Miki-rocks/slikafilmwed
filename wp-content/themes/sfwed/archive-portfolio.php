@@ -1,6 +1,6 @@
 <?php
 $portfolio_categories = get_terms( array(
-    'taxonomy' => 'category',
+    'taxonomy' => 'portfolio-category',
     'orderby' => 'count', // Order by the number of posts
     'order' => 'DESC', // Descending order
     'hide_empty' => true, // Only get categories with posts
@@ -21,7 +21,7 @@ if (is_category()) {
 	$args = array(
 		'post_type' => 'portfolio',
 		'posts_per_page' => -1, // Retrieve all posts
-		'cat' => $category_id,
+		'tax' => $category_id,
 	);
 } else {
 	$page_title = $term->label;

@@ -195,6 +195,15 @@ function wrap_blocks_in_container($block_content, $block) {
 
   return $block_content;
 }
-
 // Add the filter
 add_filter('render_block', 'wrap_blocks_in_container', 10, 2);
+
+/**
+ * display all posts on posts archive
+ */
+function custom_posts_per_page( $query ) {
+  if ( is_post_type_archive( 'post' ) && $query->is_main_query() && !is_admin() ) {
+      $query->set( 'posts_per_page', 6 );
+  }
+}
+add_action( 'pre_get_posts', 'custom_posts_per_page' );
