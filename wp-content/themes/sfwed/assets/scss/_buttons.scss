@@ -137,6 +137,9 @@
 
     &:hover, &:focus, &:active, &.hover, &.focus, &.active {
       box-shadow: none;
+      background: transparent !important;
+      color: $primary-1 !important;
+      text-decoration: underline;
     }
   }
 }

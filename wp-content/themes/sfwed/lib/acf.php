@@ -165,6 +165,26 @@ function sfwed_acf_custom_blocks_init() {
 			),
 			'mode' => 'auto',
 		));
+
+		acf_register_block_type(array(
+			'name'              => 'hero-simple',
+			'title'             => __('Hero simple'),
+			'description'       => __('A Hero simple section.'),
+			'post_types'        => array('post', 'page'),
+			'render_template'   => 'templates/blocks/block-hero-simple.php',
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('hero-simple', get_template_directory_uri() . '/build/css/blocks/hero-simple.min.css');
+				wp_enqueue_style('social-share', get_template_directory_uri() . '/build/css/blocks/social-share.min.css');
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => false,
+			),
+			'mode' => 'auto',
+		));
 	}
 }
 add_action('acf/init', 'sfwed_acf_custom_blocks_init');
@@ -188,6 +208,7 @@ function sfwed_allowed_blocks($allowedBlocks)
 			'core/list-item',
 			'core/image',
 			'acf/gallery',
+			'acf/hero-simple',
 		);
 	} else {
 		$allowedBlocks = array(
@@ -197,6 +218,7 @@ function sfwed_allowed_blocks($allowedBlocks)
 			'acf/gallery',
 			'acf/portfolio-grid',
 			'acf/testimonials',
+			'acf/hero-simple',
 		);
 	}
 

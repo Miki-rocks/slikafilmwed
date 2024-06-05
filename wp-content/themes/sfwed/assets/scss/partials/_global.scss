@@ -37,10 +37,6 @@ body.mobile-nav-open {
 	overflow: hidden;
 }
 
-.site-content {
-	overflow: hidden;
-}
-
 .horizontal-brake {
 	height: 1px;
 	background: $black;
@@ -179,6 +175,51 @@ body.mobile-nav-open {
 			&::before {
 				opacity: 1;
 				transform: translateX(0rem);
+			}
+		}
+	}
+}
+
+.position-sticky {
+	position: sticky;
+	top: spacer(9);
+	z-index: 2;
+}
+
+.wp-block-embed iframe {
+	width: 100%;
+	height: 30rem;
+
+	@include media-breakpoint-up(md) {
+		height: 50rem;
+	}
+
+	@include media-breakpoint-up(xl) {
+		height: 55rem;
+	}
+}
+
+.post-prev-next-nav {
+	
+	span {
+		transition: $transition-base;
+	}
+
+	&-label {
+		color: $tertiary-1;
+	}
+
+	&-title {
+		color: $tertiary-2;
+	}
+
+	a {
+		&:hover, &:focus, &:active {
+
+			color: $black;
+
+			span {
+				color: $black;
 			}
 		}
 	}

@@ -1,0 +1,38 @@
+@import "blocks";
+
+.social-share {
+	svg {
+		width: 3.2rem;
+		height: 3.2rem;
+		margin-left: spacer(2);
+		margin-right: spacer(2);
+
+		.colored-part {
+			transition: $transition-base;
+		}
+	}
+
+	&-icons_wrap-icon {
+		&:first-child {
+			svg {
+				margin-left: 0;
+			}
+		}
+		
+		&:last-child {
+			svg {
+				margin-right: 0;
+			}
+		}
+
+		&-link {
+			&:hover, &:focus, &:active {
+				svg {
+					.colored-part {
+						fill: $primary-1;
+					}
+				}
+			}
+		}
+	}
+}

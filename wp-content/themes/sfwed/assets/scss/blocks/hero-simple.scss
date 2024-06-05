@@ -1,0 +1,10 @@
+@import "blocks";
+
+.hero-simple {
+	&__background {
+		img {
+			max-height: 60vh;
+			width: auto;
+		}
+	}
+}

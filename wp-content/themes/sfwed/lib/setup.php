@@ -105,6 +105,11 @@ function sfwed_assets() {
   if (is_category()) {
     wp_enqueue_style('portfolio-grid', get_template_directory_uri() . '/build/css/blocks/portfolio-grid.min.css');
   }
+
+  if (is_singular('post')) {
+    wp_enqueue_style('hero-simple', get_template_directory_uri() . '/build/css/blocks/hero-simple.min.css');
+		wp_enqueue_style('social-share', get_template_directory_uri() . '/build/css/blocks/social-share.min.css');
+  }
 }
 add_action( 'wp_enqueue_scripts', 'sfwed_assets', 100 );
 
@@ -164,3 +169,32 @@ if ( get_field( 'login_logo', 'option' ) ) {
   echo '<style type="text/css">h1 a {background-image: url(' . $login_logo_img_url . ') !important; }</style>';
 }
 add_action('login_head', 'sfwed_custom_loginlogo');
+
+/**
+ * Function to wrap blocks inside a .container div
+ */
+function wrap_blocks_in_container($block_content, $block) {
+  $allowed_blocks = [
+      'core/paragraph',
+      'core/quote',
+      'core/table',
+      'core/heading',
+      'core/subhead',
+      'core/spacer',
+      'core/embed',
+      'core/list',
+      'core/list-item',
+      'core/image',
+  ];
+
+  // Check if the block is in the list of allowed blocks
+  if (in_array($block['blockName'], $allowed_blocks)) {
+      // Wrap the block content in a .container div
+      $block_content = '<section class="sfwed-section"><div class="container"><div class="row"><div class="col-12">' . $block_content . '</div></div></div></section>';
+  }
+
+  return $block_content;
+}
+
+// Add the filter
+add_filter('render_block', 'wrap_blocks_in_container', 10, 2);
