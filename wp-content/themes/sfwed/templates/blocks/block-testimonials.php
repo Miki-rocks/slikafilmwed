@@ -66,7 +66,7 @@ $baseClass = 'testimonials';
 							[
 								'type' => 'button',
 								'classes' => $baseClass . '__arrow prevArrow btn',
-								'text' => '',
+								'text' => 'Previous testimonial',
 								'size' => '',
 								'icon' => 'icon-chevron-left',
 								'icon-position' => 'right',
@@ -81,7 +81,7 @@ $baseClass = 'testimonials';
 							[
 								'type' => 'button',
 								'classes' => $baseClass . '__arrow nextArrow btn',
-								'text' => '',
+								'text' => 'Next testimonial',
 								'size' => '',
 								'icon' => 'icon-chevron-right',
 								'icon-position' => 'right',

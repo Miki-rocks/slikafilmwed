@@ -55,7 +55,7 @@ $baseClass = 'text-boxes';
 					<?php } ?>
 
 					<?php if (isset($data['text_boxes'][0]) && !empty($data['text_boxes'][0])) { ?>
-						<h2 class="<?php echo $baseClass; ?>__title font-size-h-s color-tertiary-1 mt-10 mt-lg-13 mb-4"><?php echo $data['text_boxes'][0]['box_title']; ?></h2>
+						<h2 class="<?php echo $baseClass; ?>__title font-size-h-s color-black mt-10 mt-lg-13 mb-4"><?php echo $data['text_boxes'][0]['box_title']; ?></h2>
 						<div class="<?php echo $baseClass; ?>__text font-size-b-m"><?php echo $data['text_boxes'][0]['box_text']; ?></div>
 					<?php } ?>
 				</div>
@@ -66,7 +66,7 @@ $baseClass = 'text-boxes';
 				foreach ($data['text_boxes'] as $key => $text_box) {
 					if ($key != 0) { ?>
 						<div class="col-12 col-lg-4">
-							<h2 class="<?php echo $baseClass; ?>__title font-size-h-s color-tertiary-1 mt-10 mt-lg-13 mb-4"><?php echo $text_box['box_title']; ?></h2>
+							<h2 class="<?php echo $baseClass; ?>__title font-size-h-s color-black mt-10 mt-lg-13 mb-4"><?php echo $text_box['box_title']; ?></h2>
 							<div class="<?php echo $baseClass; ?>__text font-size-b-m"><?php echo $text_box['box_text']; ?></div>
 						</div>
 					<?php }

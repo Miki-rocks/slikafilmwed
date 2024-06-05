@@ -73,3 +73,23 @@ function sfwed_custom_post_type_register()
 	register_taxonomy('portfolio-category',array('portfolio'), $args_portfolio_category);
 }
 add_action('init', 'sfwed_custom_post_type_register', 0);
+
+add_action( 'init', 'sfwed_rename_post_type' );
+function sfwed_rename_post_type() {
+    global $wp_post_types;
+
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'Stories';
+    $labels->singular_name = 'Story';
+    $labels->add_new = 'Add story';
+    $labels->add_new_item = 'Add story';
+    $labels->edit_item = 'Edit story';
+    $labels->new_item = 'Story';
+    $labels->view_item = 'View story';
+    $labels->search_items = 'Search stories';
+    $labels->not_found = 'No stories found';
+    $labels->not_found_in_trash = 'No stories found in Trash';
+    $labels->all_items = 'All stories';
+    $labels->menu_name = 'Stories';
+    $labels->name_admin_bar = 'Stories';
+}

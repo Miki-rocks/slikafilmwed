@@ -18,6 +18,8 @@ function sfwed_setup() {
   add_image_size( 'hero-hd', 1920, 1080 );
   add_image_size( 'grid-hd', 720, 1100, false );
   add_image_size( 'footer', 171, 276, true );
+  add_image_size( 'card', 750, 500, true );
+  add_image_size( 'card-sm', 450, 293, true );
 
   register_nav_menus(
     [
@@ -88,7 +90,7 @@ function sfwed_assets() {
       break;
   }
 
-  if (is_singular('portfolio') || is_post_type_archive('portfolio')) {
+  if (is_singular('portfolio')) {
     wp_enqueue_style('gallery', get_template_directory_uri() . '/build/css/blocks/gallery.min.css');
 
     wp_enqueue_style('lightgallery', get_template_directory_uri() . '/build/css/blocks/lightgallery.min.css');
@@ -102,7 +104,7 @@ function sfwed_assets() {
     wp_enqueue_style('portfolio-grid', get_template_directory_uri() . '/build/css/blocks/portfolio-grid.min.css');
   }
 
-  if (is_category()) {
+  if (is_category() || is_tax( 'portfolio-category' ) || is_home() || is_tag() || is_post_type_archive('portfolio')) {
     wp_enqueue_style('portfolio-grid', get_template_directory_uri() . '/build/css/blocks/portfolio-grid.min.css');
   }
 

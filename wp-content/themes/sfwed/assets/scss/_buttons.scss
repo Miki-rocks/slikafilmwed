@@ -109,6 +109,17 @@
     text-decoration: none;
   }
 
+  &.prevArrow,
+  &.nextArrow {
+    .text {
+      color: transparent;
+      font-size: 0;
+      line-height: 0;
+      visibility: hidden;
+      display: none;
+    }
+  }
+
   &-link {
     padding-top: 0;
     padding-bottom: 0;

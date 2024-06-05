@@ -37,9 +37,14 @@
 
 	nav {
 		a {
+			display: block;
 			color: $tertiary-1;
-			padding: spacer(2) 0;
+			padding: spacer(3) 0;
 			transition: $transition-base;
+
+			@include media-breakpoint-up(md) {
+				padding: spacer(2) 0;
+			}
 
 			&:hover {
 				color: $tertiary-2;
