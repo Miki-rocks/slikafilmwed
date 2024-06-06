@@ -20,6 +20,7 @@ function sfwed_setup() {
   add_image_size( 'footer', 171, 276, true );
   add_image_size( 'card', 750, 500, true );
   add_image_size( 'card-sm', 450, 293, true );
+  add_image_size( 'card-vertical', 351, 526, true );
 
   register_nav_menus(
     [
@@ -205,7 +206,7 @@ add_filter('render_block', 'wrap_blocks_in_container', 10, 2);
  */
 function custom_posts_per_page( $query ) {
   if ( is_post_type_archive( 'post' ) && $query->is_main_query() && !is_admin() ) {
-      $query->set( 'posts_per_page', 6 );
+      $query->set( 'posts_per_page', -1 );
   }
 }
 add_action( 'pre_get_posts', 'custom_posts_per_page' );

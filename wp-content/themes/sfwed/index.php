@@ -9,6 +9,7 @@ if ( is_post_type_archive( 'portfolio' ) ) {
     );
 	$bottomCtaLink = '/contact-us';
 	$bottomCtaText = __('Get in touch', 'sfwed');
+	$additionalCardClass = '';
 } elseif (is_home()) {
     // Custom logic for Post post type archive
     $page_title = 'Stories';
@@ -19,6 +20,7 @@ if ( is_post_type_archive( 'portfolio' ) ) {
     );
 	$bottomCtaLink = '/contact-us';
 	$bottomCtaText = __('Get in touch', 'sfwed');
+	$additionalCardClass = 'post';
 } elseif ( is_category() ) {
     // Custom logic for Category taxonomy
     $page_title = "Story: " . single_cat_title( '', false );
@@ -29,6 +31,7 @@ if ( is_post_type_archive( 'portfolio' ) ) {
     );
 	$bottomCtaLink = get_post_type_archive_link('post');
 	$bottomCtaText = __('View all stories', 'sfwed');
+	$additionalCardClass = 'post';
 } elseif ( is_tax( 'portfolio-category' ) ) {
     // Custom logic for Portfolio Category custom taxonomy
     $page_title = "Portfolio: " . single_term_title( '', false );
@@ -46,6 +49,7 @@ if ( is_post_type_archive( 'portfolio' ) ) {
     );
 	$bottomCtaLink = get_post_type_archive_link('portfolio');
 	$bottomCtaText = __('View portfolio', 'sfwed');
+	$additionalCardClass = '';
 } elseif ( is_tag() ) {
     // Custom logic for Tag taxonomy
     $page_title = "Tag: " . single_tag_title( '', false );
@@ -57,6 +61,7 @@ if ( is_post_type_archive( 'portfolio' ) ) {
     );
 	$bottomCtaLink = get_post_type_archive_link('post');
 	$bottomCtaText = __('View all stories', 'sfwed');
+	$additionalCardClass = 'post';
 } else {
     // Default logic for other cases
     $page_title = 'Archive';
@@ -67,6 +72,7 @@ if ( is_post_type_archive( 'portfolio' ) ) {
     );
 	$bottomCtaLink = '/contact-us';
 	$bottomCtaText = __('Get in touch', 'sfwed');
+	$additionalCardClass = 'post';
 }
 $all_query = new WP_Query( $args );
 
@@ -109,12 +115,24 @@ $taxonomies = get_terms( array(
 	<?php
 	// Check if there are any posts
 	if ( $all_query->have_posts() ) : ?>
+
+		<?php if ($additionalCardClass == 'post') {
+			$rowClass = 'row no-gutters';
+			$colClass = 'col-12 col-lg-3';
+		} else {
+			$rowClass = 'row';
+			$colClass = 'col-12 col-lg-4';
+		} ?>
+
 		<section class="sfwed-section archive-grid position-relative animateOnEnter my-12">
 			<div class="container">
-				<div class="row">
+				<div class="<?php echo $rowClass; ?>">
 					<?php // Start the Loop
 					while ( $all_query->have_posts() ) : $all_query->the_post(); ?>
-						<div class="col-12 col-lg-4">
+
+						
+
+						<div class="<?php echo $colClass; ?>">
 							<?php
 							$post_id = get_the_ID();
 
@@ -133,6 +151,7 @@ $taxonomies = get_terms( array(
 								'text' => join( ', ', $term_links ),
 								'image_id' => get_post_thumbnail_id($post_id),
 								'color' => 'color-tertiary-1',
+								'classes' => $additionalCardClass,
 							);
 
 							get_template_part('templates/cards/card-portfolio', null, $args); ?>

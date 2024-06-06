@@ -22,6 +22,6 @@
 } ?>
 
 <?php
-$args['title'] = __('View more stories', 'sfwed');
+$args['title'] = __('Similar elopement experiences', 'sfwed');
 get_template_part('templates/blocks/block-portfolio-grid', null, $args);
 ?>

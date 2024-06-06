@@ -17,38 +17,24 @@ if (!array_filter($data)) {
 }
 
 $baseClass = 'portfolio-grid';
-
-if (is_singular('portfolio')) {
-	$related = get_posts(
-		array(
-			'post_type' => 'portfolio',
-			'category__in' => wp_get_post_categories($post->ID),
-			'numberposts' => 9,
-			'post__not_in' => array($post->ID),
-			'orderby'    => 'date',
-			'sort_order' => 'asc',
-		)
-	);
-} else {
-	$related = get_posts(
-		array(
-			'post_type' => 'portfolio',
-			// 'category__in' => wp_get_post_categories($post->ID),
-			'numberposts' => 9,
-			// 'post__not_in' => array($post->ID),
-			'orderby'    => 'date',
-			'sort_order' => 'asc',
-		)
-	);
-}
+$related = get_posts(
+	array(
+		'post_type' => 'post',
+		// 'category__in' => wp_get_post_categories($post->ID),
+		'numberposts' => 4,
+		// 'post__not_in' => array($post->ID),
+		'orderby'    => 'date',
+		'sort_order' => 'asc',
+	)
+);
 
 $portfolio_categories = get_terms( array(
-    'taxonomy' => 'portfolio-category',
+    'taxonomy' => 'category',
     'orderby' => 'count', // Order by the number of posts
     'order' => 'DESC', // Descending order
     'hide_empty' => true, // Only get categories with posts
     'object_ids' => get_posts( array(
-        'post_type' => 'portfolio',
+        'post_type' => 'post',
         'posts_per_page' => -1, // Get all posts
         'fields' => 'ids', // Only get post IDs
     ) ),
@@ -56,7 +42,7 @@ $portfolio_categories = get_terms( array(
 ) );
 ?>
 
-<section class="sfwed-section <?php echo $baseClass; ?> my-8 my-lg-10" <?php echo (isset($block['anchor']) && !empty($block['anchor'])) ? 'id="' . $block['anchor'] . '"' : '' ; ?>>
+<section class="sfwed-section <?php echo $baseClass; ?> card-m-sm my-8 my-lg-10" <?php echo (isset($block['anchor']) && !empty($block['anchor'])) ? 'id="' . $block['anchor'] . '"' : '' ; ?>>
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
@@ -73,16 +59,16 @@ $portfolio_categories = get_terms( array(
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row no-gutters">
 			<?php
 			if (isset($related) && !empty($related)) { ?>
 				<?php foreach ($related as $key => $post) { ?>
-					<div class="col-12 col-lg-4">
+					<div class="col-12 col-lg-3">
 					
 						<?php setup_postdata($post);
 
 						$term_links = array();
-						$terms = get_the_terms( $post->ID, 'portfolio-category' );
+						$terms = get_the_terms( $post->ID, 'category' );
 						if ( $terms && ! is_wp_error( $terms ) ) :
 							foreach ( $terms as $term ) {
 								$term_links[] = $term->name;
@@ -96,6 +82,7 @@ $portfolio_categories = get_terms( array(
 							'link' => get_permalink($post->ID),
 							'image_id' => get_post_thumbnail_id($post->ID),
 							'color' => 'color-primary-1',
+							'classes' => 'post',
 						);
 
 						get_template_part('templates/cards/card-portfolio', null, $args); ?>
@@ -114,8 +101,8 @@ $portfolio_categories = get_terms( array(
 						[
 							'type' => 'a',
 							'classes' => 'btn-primary mt-8',
-							'text' => __('View portfolio', 'sfwed'),
-							'link' => get_post_type_archive_link('portfolio'),
+							'text' => __('All elopement experiences', 'sfwed'),
+							'link' => get_post_type_archive_link('post'),
 							// 'target' => '',
 							'size' => '',
 							'icon' => 'icon-chevron-right',

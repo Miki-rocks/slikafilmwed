@@ -20,7 +20,7 @@ $baseClass = 'hero-simple';
 
 <section class="sfwed-section <?php echo $baseClass; ?> pt-13 my-13" <?php echo (isset($block['anchor']) && !empty($block['anchor'])) ? 'id="' . $block['anchor'] . '"' : '' ; ?>>
 	<div class="container">
-		<div class="row">
+		<div class="row bg-el--left low">
 			<div class="col-12">
 
 				<div class="<?php echo $baseClass; ?>__content">

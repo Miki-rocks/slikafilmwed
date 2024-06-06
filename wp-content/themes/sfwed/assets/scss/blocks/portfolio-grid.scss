@@ -50,7 +50,8 @@
 		}
 	}
 
-	&__link {
+	&__link,
+	&__text {
 		color: $black;
 		transition: $transition-base;
 
@@ -73,6 +74,28 @@
 				img {
 					transform: translate(-50%, -50%) scale(1.02);
 				}
+			}
+		}
+	}
+
+	&.post {
+
+		margin-left: 1px;
+		margin-right: 1px;
+
+		#{$thisCard}__image {
+			padding-bottom: 150%;
+		}
+
+		#{$thisCard}__link,
+		#{$thisCard}__text {
+			color: $black !important;
+		}
+
+		&:hover, &:focus, &:active {
+			#{$thisCard}__link,
+			#{$thisCard}__text {
+				color: $tertiary-1 !important;
 			}
 		}
 	}
