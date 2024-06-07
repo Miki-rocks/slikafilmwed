@@ -1,3 +1,23 @@
 @import "blocks";
 
-.process {}
+.process {
+	&__steps {
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: spacer(3);
+			bottom: spacer(12);
+			left: - spacer(3);
+			width: 1px;
+			border-radius: 10rem;
+			background: rgba($primary-1, 0.5);
+
+			@include media-breakpoint-up(lg) {
+				top: spacer(3);
+				bottom: spacer(13);
+				left: - spacer(5);
+			}
+		}
+	}
+}

@@ -48,6 +48,26 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_66631b9a7ce0a",
+            "label": "Text above button",
+            "name": "text_above_button",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_666174c216111",
             "label": "Button",
             "name": "button",
@@ -148,5 +168,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1717662958
+    "modified": 1717771177
 }

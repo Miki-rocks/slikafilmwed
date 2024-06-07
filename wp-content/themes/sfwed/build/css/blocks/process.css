@@ -1,0 +1,1 @@
+.process__steps::before{content:"";display:block;position:absolute;top:.8rem;bottom:8rem;left:-0.8rem;width:1px;border-radius:10rem;background:rgba(244,201,177,.5)}@media(min-width: 1024px){.process__steps::before{top:.8rem;bottom:9.6rem;left:-1.6rem}}

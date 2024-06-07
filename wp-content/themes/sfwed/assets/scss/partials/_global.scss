@@ -119,6 +119,12 @@ body.mobile-nav-open {
 			transition: $transition-base;
 		}
 
+		&.light {
+			&::before {
+				background: rgba($secondary-1, 0.5);
+			}
+		}
+
 		&.low {
 			&::before {
 				top: 15rem;

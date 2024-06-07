@@ -223,6 +223,25 @@ function sfwed_acf_custom_blocks_init() {
 			),
 			'mode' => 'auto',
 		));
+
+		acf_register_block_type(array(
+			'name'              => 'contact',
+			'title'             => __('Contact'),
+			'description'       => __('A Contact section.'),
+			'post_types'        => array('post', 'page'),
+			'render_template'   => 'templates/blocks/block-contact.php',
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('contact', get_template_directory_uri() . '/build/css/blocks/contact.min.css');
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => true,
+			),
+			'mode' => 'auto',
+		));
 	}
 }
 add_action('acf/init', 'sfwed_acf_custom_blocks_init');
@@ -259,6 +278,7 @@ function sfwed_allowed_blocks($allowedBlocks)
 			'acf/testimonials',
 			'acf/hero-simple',
 			'acf/process',
+			'acf/contact',
 		);
 	}
 
