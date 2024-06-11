@@ -1,3 +1,175 @@
 @import "blocks";
 
-.contact {}
+.contact {
+	.col-12 {
+		& > p {
+			margin-bottom: 0;
+
+			& > label {
+				margin-bottom: spacer(8);
+				width: 100%;
+			}
+		}
+	}
+}
+
+.wpcf7-form {
+
+	.form-group {
+		margin-bottom: 0;
+	}
+
+	.wpcf7-form-control-wrap {
+		display: block;
+		margin-top: spacer(2);
+	}
+
+	.wpcf7-not-valid-tip {
+		color: $error;
+		margin-top: spacer(1);
+		font-size: 1.4rem;
+	}
+
+	.wpcf7-not-valid {
+		border-color: $error !important;
+	}
+
+	.wpcf7-response-output {
+		// padding: spacer(3) spacer(1);
+		// margin: 0;
+		// border: none !important;
+		// color: $primary-2;
+		// font-weight: bold;
+		// text-align: center;
+	}
+
+	.ajax-loader {
+		display: block !important;
+		width: 50px !important;
+		height: 0px !important;
+		margin: 0 auto 0 !important;
+	}
+
+	textarea,
+	input:not(.wpcf7-submit):not([type="checkbox"]) {
+		background: $white;
+		color: $black;
+		border: 1px solid $black;
+		border-radius: 0;
+		transition: $transition-base;
+
+		&:focus {
+			outline: none;
+			box-shadow: none;
+			border-color: $primary-1;
+		}
+	}
+
+	a {
+		display: inline-block !important;
+		color: $black;
+		text-decoration: underline;
+		transition: $transition-base;
+
+		&:hover, &:active {
+			color: $primary-2;
+		}
+	}
+
+	textarea {
+		height: 13rem;
+	}
+
+	input,
+	textarea {
+		&:focus {
+			border-color: $primary-1 !important;
+		}
+	}
+
+	.wpcf7-acceptance > .wpcf7-list-item > label > input[type="checkbox"] {
+		background: transparent;
+		width: 0;
+		height: 0;
+	}
+
+	.custom-control-input {
+		& ~ .custom-control-label {
+
+			margin-left: 1.6rem;
+
+			&:focus {
+				box-shadow: none;
+				outline: none;
+			}
+
+			&::before {
+				border-color: $black !important;
+				top: 0.4rem;
+				width: 2.6rem;
+				height: 1.6rem;
+				left: -3.6rem;
+				border-radius: 100rem;
+				box-shadow: none;
+			}
+
+			&::after {
+				background-color: $black;
+				top: 0.7rem;
+				width: 1rem;
+				height: 1rem;
+				left: -3.3rem;
+			}
+		}
+
+		&:checked {
+			& ~ .custom-control-label {
+				&::before {
+					border-color: $primary-1 !important;
+					background: transparent;
+				}
+
+				&::after {
+					left: -3rem;
+					background-color: $primary-1;
+				}
+			}
+		}
+	}
+
+	.wpcf7-spinner {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: none !important;
+
+		&::before {
+			content: none;
+		}
+	}
+
+	&.submitting {
+		.wpcf7-spinner {
+			position: absolute;
+			top: 50%;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			transform: translateY(-50%);
+			display: block !important;
+			width: 40px !important;
+			height: 40px !important;
+			margin: 0 auto !important;
+			background-image: url("/wp-content/themes/sfwed/assets/img/loading.gif") !important;
+			background-color: rgba($primary-1, 1);
+			background-size: contain;
+			opacity: 1;
+
+			&::before {
+				content: none;
+			}
+		}
+	}
+}

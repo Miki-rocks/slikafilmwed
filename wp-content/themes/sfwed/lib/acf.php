@@ -228,10 +228,31 @@ function sfwed_acf_custom_blocks_init() {
 			'name'              => 'contact',
 			'title'             => __('Contact'),
 			'description'       => __('A Contact section.'),
-			'post_types'        => array('post', 'page'),
+			'post_types'        => array('page'),
 			'render_template'   => 'templates/blocks/block-contact.php',
 			'enqueue_assets'    => function(){
 				wp_enqueue_style('contact', get_template_directory_uri() . '/build/css/blocks/contact.min.css');
+				wp_enqueue_script('contact', get_template_directory_uri() . '/build/scripts/blocks/contact.js', array('jquery'), '', true);
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => true,
+			),
+			'mode' => 'auto',
+		));
+
+		acf_register_block_type(array(
+			'name'              => 'contact-thanks',
+			'title'             => __('Contact thanks'),
+			'description'       => __('A Contact thanks section.'),
+			'post_types'        => array('page'),
+			'render_template'   => 'templates/blocks/block-contact-thanks.php',
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('contact', get_template_directory_uri() . '/build/css/blocks/contact.min.css');
+				wp_enqueue_script('contact', get_template_directory_uri() . '/build/scripts/blocks/contact.js', array('jquery'), '', true);
 			},
 			'icon'              => 'welcome-widgets-menus',
 			'category'          => 'sfwed-blocks',
@@ -279,6 +300,7 @@ function sfwed_allowed_blocks($allowedBlocks)
 			'acf/hero-simple',
 			'acf/process',
 			'acf/contact',
+			'acf/contact-thanks',
 		);
 	}
 
