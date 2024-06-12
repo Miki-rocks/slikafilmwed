@@ -206,6 +206,25 @@ function sfwed_acf_custom_blocks_init() {
 		));
 
 		acf_register_block_type(array(
+			'name'              => 'hero-simple-2',
+			'title'             => __('Hero simple 2'),
+			'description'       => __('A Hero simple 2 section.'),
+			'post_types'        => array('page'),
+			'render_template'   => 'templates/blocks/block-hero-simple-2.php',
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('hero-simple', get_template_directory_uri() . '/build/css/blocks/hero-simple-2.min.css');
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => false,
+			),
+			'mode' => 'auto',
+		));
+
+		acf_register_block_type(array(
 			'name'              => 'process',
 			'title'             => __('Process'),
 			'description'       => __('A Process section.'),
@@ -251,8 +270,45 @@ function sfwed_acf_custom_blocks_init() {
 			'post_types'        => array('page'),
 			'render_template'   => 'templates/blocks/block-contact-thanks.php',
 			'enqueue_assets'    => function(){
-				wp_enqueue_style('contact', get_template_directory_uri() . '/build/css/blocks/contact.min.css');
-				wp_enqueue_script('contact', get_template_directory_uri() . '/build/scripts/blocks/contact.js', array('jquery'), '', true);
+				wp_enqueue_style('contact-thanks', get_template_directory_uri() . '/build/css/blocks/contact-thanks.min.css');
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => true,
+			),
+			'mode' => 'auto',
+		));
+
+		acf_register_block_type(array(
+			'name'              => 'image-text',
+			'title'             => __('Image text'),
+			'description'       => __('A Image text section.'),
+			'post_types'        => array('page'),
+			'render_template'   => 'templates/blocks/block-image-text.php',
+			'enqueue_assets'    => function(){
+				// wp_enqueue_style('image-text', get_template_directory_uri() . '/build/css/blocks/image-text.min.css');
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => true,
+			),
+			'mode' => 'auto',
+		));
+
+		acf_register_block_type(array(
+			'name'              => 'image-text-image',
+			'title'             => __('Image text image'),
+			'description'       => __('A Image text image section.'),
+			'post_types'        => array('page'),
+			'render_template'   => 'templates/blocks/block-image-text-image.php',
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('image-text-image', get_template_directory_uri() . '/build/css/blocks/image-text-image.min.css');
 			},
 			'icon'              => 'welcome-widgets-menus',
 			'category'          => 'sfwed-blocks',
@@ -298,9 +354,12 @@ function sfwed_allowed_blocks($allowedBlocks)
 			'acf/post-grid',
 			'acf/testimonials',
 			'acf/hero-simple',
+			'acf/hero-simple-2',
 			'acf/process',
 			'acf/contact',
 			'acf/contact-thanks',
+			'acf/image-text',
+			'acf/image-text-image',
 		);
 	}
 

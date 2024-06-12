@@ -3,6 +3,8 @@ $('.wpcf7-form .custom-control .custom-control-label').on('click', function() {
 	$('.sfwed_custom_submit').toggleClass('disabled');
 })
 
-// document.addEventListener( 'wpcf7mailsent', function( event ) {
-// 	location = '/thank-you';
-// }, false );
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+	setTimeout(() => {
+		location = '/thank-you';
+	}, 2000);
+}, false );

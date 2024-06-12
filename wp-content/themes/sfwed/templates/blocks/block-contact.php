@@ -3,11 +3,10 @@ $data = get_fields();
 
 if (isset($args) && !empty($args)) {
 	$array_defaults = array(
+		'small_title' => '',
 		'title' => '',
 		'text' => '',
-		'cta_title' => '',
-		'button' => array(),
-		'image' => '',
+		'contact_form_shortcode' => '',
 	);
 
 	if (isset($args) && !empty($args)) {
@@ -22,15 +21,10 @@ if (!array_filter($data)) {
 
 $baseClass = 'contact';
 ?>
-<pre style="padding-top: 200px;"><?php // print_r($data); ?></pre>
+
 <section class="sfwed-section <?php echo $baseClass; ?> overflow-hidden my-8 my-lg-10 pb-12 pb-lg-12" <?php echo (isset($block['anchor']) && !empty($block['anchor'])) ? 'id="' . $block['anchor'] . '"' : '' ; ?>>
-
-	<div class="<?php echo $baseClass; ?>__background animateOnEnter">
-		<?php echo wp_get_attachment_image($data['hero_image'], 'full', '', ['class' => '', 'title' => 'Contact hero image'] ); ?>
-	</div>
-
 	<div class="container">
-		<div class="row bg-el--right wide light">
+		<div class="row bg-el--right wide light low">
 			<div class="col-12 col-lg-4 col-xl-3 offset-lg-1">
 				<p class="<?php echo $baseClass; ?>__small_title font-size-h-xxs mb-4"><?php echo $data['small_title']; ?></p>
 				<h1 class="<?php echo $baseClass; ?>__title font-size-h-xl mb-8"><?php echo $data['title']; ?></h1>

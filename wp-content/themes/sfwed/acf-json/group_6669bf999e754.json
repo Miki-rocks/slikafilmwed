@@ -1,29 +1,9 @@
 {
-    "key": "group_66631f791718b",
-    "title": "Block: Contact",
+    "key": "group_6669bf999e754",
+    "title": "Block: Image text image",
     "fields": [
         {
-            "key": "field_66631f8b99a41",
-            "label": "Small title",
-            "name": "small_title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_66631f9299a42",
+            "key": "field_6669bf99a1bf4",
             "label": "Title",
             "name": "title",
             "aria-label": "",
@@ -43,7 +23,32 @@
             "append": ""
         },
         {
-            "key": "field_66631f9799a43",
+            "key": "field_6669bf99a1bfa",
+            "label": "Image one",
+            "name": "image_one",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_6669bf99a1c06",
             "label": "Text",
             "name": "text",
             "aria-label": "",
@@ -63,11 +68,11 @@
             "delay": 0
         },
         {
-            "key": "field_66631fab99a44",
-            "label": "Contact form shortcode",
-            "name": "contact_form_shortcode",
+            "key": "field_6669bf99a1c00",
+            "label": "Button",
+            "name": "button",
             "aria-label": "",
-            "type": "text",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -76,11 +81,32 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "return_format": "array"
+        },
+        {
+            "key": "field_6669bfa9eb162",
+            "label": "Image two",
+            "name": "image_two",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -88,7 +114,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/contact"
+                "value": "acf\/image-text-image"
             }
         ]
     ],
@@ -101,5 +127,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718196197
+    "modified": 1718206394
 }

@@ -1,9 +1,54 @@
 {
-    "key": "group_6661749abd2e8",
-    "title": "Block: Process",
+    "key": "group_66699e81d68ad",
+    "title": "Block: Contact thanks",
     "fields": [
         {
-            "key": "field_6661749b1610f",
+            "key": "field_66699e827854a",
+            "label": "Hero title",
+            "name": "hero_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66699edd7854b",
+            "label": "Hero image",
+            "name": "hero_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_6669a062ccb6d",
             "label": "Title",
             "name": "title",
             "aria-label": "",
@@ -23,7 +68,7 @@
             "append": ""
         },
         {
-            "key": "field_666174b916110",
+            "key": "field_6669a064ccb6e",
             "label": "Image",
             "name": "image",
             "aria-label": "",
@@ -48,7 +93,7 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_66631b9a7ce0a",
+            "key": "field_6669a067ccb6f",
             "label": "Text above button",
             "name": "text_above_button",
             "aria-label": "",
@@ -68,7 +113,7 @@
             "append": ""
         },
         {
-            "key": "field_666174c216111",
+            "key": "field_6669a06eccb70",
             "label": "Button",
             "name": "button",
             "aria-label": "",
@@ -84,7 +129,7 @@
             "return_format": "array"
         },
         {
-            "key": "field_666174cd16112",
+            "key": "field_6669a071ccb71",
             "label": "Steps",
             "name": "steps",
             "aria-label": "",
@@ -106,32 +151,11 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_666174db16113",
-                    "label": "Step title",
-                    "name": "step_title",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_666174cd16112"
-                },
-                {
-                    "key": "field_666174e416114",
+                    "key": "field_6669a071ccb73",
                     "label": "Step text",
                     "name": "step_text",
                     "aria-label": "",
-                    "type": "textarea",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -141,11 +165,11 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "placeholder": "",
-                    "new_lines": "",
-                    "parent_repeater": "field_666174cd16112"
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "parent_repeater": "field_6669a071ccb71"
                 }
             ]
         }
@@ -155,7 +179,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/process"
+                "value": "acf\/contact-thanks"
             }
         ]
     ],
@@ -168,5 +192,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718198424
+    "modified": 1718198848
 }
