@@ -319,6 +319,44 @@ function sfwed_acf_custom_blocks_init() {
 			),
 			'mode' => 'auto',
 		));
+
+		acf_register_block_type(array(
+			'name'              => 'hero-with-box',
+			'title'             => __('Hero with box'),
+			'description'       => __('A Hero with box section.'),
+			'post_types'        => array('page'),
+			'render_template'   => 'templates/blocks/block-hero-with-box.php',
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('hero-with-box', get_template_directory_uri() . '/build/css/blocks/hero-with-box.min.css');
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => false,
+			),
+			'mode' => 'auto',
+		));
+
+		acf_register_block_type(array(
+			'name'              => '2-images-2-texts',
+			'title'             => __('2 images 2 texts'),
+			'description'       => __('A 2 images 2 texts section.'),
+			'post_types'        => array('page'),
+			'render_template'   => 'templates/blocks/block-2-images-2-texts.php',
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('2-images-2-texts', get_template_directory_uri() . '/build/css/blocks/2-images-2-texts.min.css');
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => true,
+			),
+			'mode' => 'auto',
+		));
 	}
 }
 add_action('acf/init', 'sfwed_acf_custom_blocks_init');
@@ -360,6 +398,8 @@ function sfwed_allowed_blocks($allowedBlocks)
 			'acf/contact-thanks',
 			'acf/image-text',
 			'acf/image-text-image',
+			'acf/hero-with-box',
+			'acf/2-images-2-texts',
 		);
 	}
 
