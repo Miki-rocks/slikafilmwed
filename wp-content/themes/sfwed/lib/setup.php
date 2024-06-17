@@ -210,3 +210,17 @@ function custom_posts_per_page( $query ) {
   }
 }
 add_action( 'pre_get_posts', 'custom_posts_per_page' );
+
+/**
+ * Custom password form
+ */
+function custom_password_form() {
+  global $post;
+  $label = 'pwbox-' . ( empty( $post->ID ) ? rand() : $post->ID );
+  $output = '<div class="wpcf7-form"><form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post" class="form-group">
+  <p>' . esc_html__( 'This content is password protected. To view it please enter your password below:', 'sfwed' ) . '</p>
+  <label for="' . $label . '" class="d-block">' . esc_html__( 'Password:', 'sfwed' ) . ' </label><input name="post_password" id="' . $label . '" type="password" size="20" class="form-control font-size-b-m" /><input type="submit" name="Access pricing" value="' . esc_attr__( 'Access pricing', 'sfwed' ) . '" class="btn btn-secondary w-100 d-block text-center mt-4" />
+  </form></div>';
+  return $output;
+}
+add_filter( 'the_password_form', 'custom_password_form' );

@@ -1,6 +1,6 @@
 {
     "key": "group_666a98f21fb53",
-    "title": "Block: Hero with blocks",
+    "title": "Block: Hero with box",
     "fields": [
         {
             "key": "field_666a98f2bd659",
@@ -107,5 +107,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718262408
+    "modified": 1718639497
 }

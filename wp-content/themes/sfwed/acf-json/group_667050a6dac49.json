@@ -1,9 +1,9 @@
 {
-    "key": "group_666a972135004",
-    "title": "Block: Images 2 texts 2",
+    "key": "group_667050a6dac49",
+    "title": "Block: Images 3 texts 1",
     "fields": [
         {
-            "key": "field_666a97210377e",
+            "key": "field_667050a6e4752",
             "label": "Title",
             "name": "title",
             "aria-label": "",
@@ -23,7 +23,7 @@
             "append": ""
         },
         {
-            "key": "field_666a973b0377f",
+            "key": "field_667050a6e475c",
             "label": "Image one",
             "name": "image_one",
             "aria-label": "",
@@ -48,7 +48,7 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_666a974803780",
+            "key": "field_667050a6e4763",
             "label": "Image two",
             "name": "image_two",
             "aria-label": "",
@@ -73,7 +73,32 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_666a975403781",
+            "key": "field_667050b709c36",
+            "label": "Image three",
+            "name": "image_three",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_667050a6e476a",
             "label": "Subtitle one",
             "name": "subtitle_one",
             "aria-label": "",
@@ -93,7 +118,7 @@
             "append": ""
         },
         {
-            "key": "field_666a975e03782",
+            "key": "field_667050a6e4774",
             "label": "Text one",
             "name": "text_one",
             "aria-label": "",
@@ -113,47 +138,7 @@
             "delay": 0
         },
         {
-            "key": "field_666a976c03783",
-            "label": "Subtitle two",
-            "name": "subtitle_two",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_666a976f03784",
-            "label": "Text two",
-            "name": "text_two",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "visual",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
-            "key": "field_666a978f03785",
+            "key": "field_667050a6e478c",
             "label": "Button",
             "name": "button",
             "aria-label": "",
@@ -174,7 +159,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/images-2-texts-2"
+                "value": "acf\/images-3-texts-1"
             }
         ]
     ],
@@ -187,5 +172,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1718636705
+    "modified": 1718636745
 }

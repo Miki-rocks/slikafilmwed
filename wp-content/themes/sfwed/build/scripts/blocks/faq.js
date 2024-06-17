@@ -1,0 +1,1 @@
+$(window).on("load",function(){class t{constructor(t){this.rootElement=$(t);const n=this.rootElement.find("button");n.on("click",function(){var t=$(this).attr("aria-expanded");n.attr("aria-expanded","false"),"false"===t&&$(this).attr("aria-expanded","true")})}}$(".accordion").each(function(){new t(this)})});

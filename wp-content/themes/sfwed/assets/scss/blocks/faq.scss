@@ -1,0 +1,154 @@
+@import "blocks";
+
+.accordion {
+    button {
+        position: relative;
+        display: block;
+        text-align: left;
+        width: 100%;
+        padding: spacer(4) spacer(7) spacer(4) 0;
+        font-weight: 400;
+        border: none;
+        background: none;
+        outline: none;
+
+        @include media-breakpoint-up(md) {
+            padding: spacer(5) spacer(7) spacer(5) 0;
+        }
+
+        &:hover, &:focus {
+            cursor: pointer;
+
+            &::after {
+                cursor: pointer;
+            }
+        }
+    }
+
+	&__inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 15.5rem;
+
+        @include media-breakpoint-up(md) {
+            grid-template-columns: 3fr 1fr;
+        }
+    }
+
+	&__main {
+        order: 2;
+
+        @include media-breakpoint-up(md) {
+            order: 1;
+        }
+    }
+
+    &__item {
+        border-bottom: 1px solid $secondary-1;
+		padding-top: spacer(4);
+
+        &:first-child {
+            padding: 0;
+        }
+
+        button[aria-expanded='true'] {
+            border-bottom: 1px solid transparent;
+        }
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+
+        &:hover {
+            .accordion__icon {
+                background-color: $primary-1;
+                transition: background-color 0.4s ease-in-out;
+            }
+        }
+    }
+
+    &__content {
+        opacity: 0;
+        max-height: 0;
+        padding-bottom: 0;
+        font-size: 1.6rem;
+        overflow: hidden;
+        transition: $transition-base;
+
+		a {
+			color: $tertiary-1;
+			transition: $transition-base;
+
+			&:hover, &:focus, &:active {
+				color: $black;
+			}
+		}
+    }
+
+    button[aria-expanded='true'] {
+
+        .accordion__icon {
+            &::before {
+                display: none;
+            }
+
+            &::after {
+                display: block;
+            }
+        }
+
+        + .accordion__content {
+            opacity: 1;
+            max-height: 85rem;
+            padding-bottom: spacer(5);
+            transition: $transition-base;
+
+            @include media-breakpoint-up(md) {
+                max-height: 40rem;
+            }
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: spacer(6);
+        height: spacer(6);
+        border-radius: 10000px;
+        background-color: $primary-2;
+        transition: background-color 0.4s ease-in-out;
+
+        &::before {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: spacer(5);
+            height: spacer(5);
+            background-image: url("/wp-content/themes/sfwed/assets/img/icons/icon-chevron-down-2.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        &::after {
+            display: none;
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: spacer(5);
+            height: spacer(5);
+            background-image: url("/wp-content/themes/sfwed/assets/img/icons/icon-chevron-down-2.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: translate(-50%, -50%) rotate(-180deg);
+        }
+    }
+}

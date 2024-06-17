@@ -340,13 +340,71 @@ function sfwed_acf_custom_blocks_init() {
 		));
 
 		acf_register_block_type(array(
-			'name'              => '2-images-2-texts',
-			'title'             => __('2 images 2 texts'),
-			'description'       => __('A 2 images 2 texts section.'),
+			'name'              => 'faq',
+			'title'             => __('FAQ'),
+			'description'       => __('A FAQ section.'),
 			'post_types'        => array('page'),
-			'render_template'   => 'templates/blocks/block-2-images-2-texts.php',
+			'render_template'   => 'templates/blocks/block-faq.php',
 			'enqueue_assets'    => function(){
-				wp_enqueue_style('2-images-2-texts', get_template_directory_uri() . '/build/css/blocks/2-images-2-texts.min.css');
+				wp_enqueue_style('faq', get_template_directory_uri() . '/build/css/blocks/faq.min.css');
+				wp_enqueue_script('faq', get_template_directory_uri() . '/build/scripts/blocks/faq.js', array('jquery'), '', true);
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => false,
+			),
+			'mode' => 'auto',
+		));
+
+		acf_register_block_type(array(
+			'name'              => 'images-2-texts-2',
+			'title'             => __('Images 2 texts 2'),
+			'description'       => __('A Images 2 texts 2 section.'),
+			'post_types'        => array('page'),
+			'render_template'   => 'templates/blocks/block-images-2-texts-2.php',
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('images-2-texts-2', get_template_directory_uri() . '/build/css/blocks/images-2-texts-2.min.css');
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => true,
+			),
+			'mode' => 'auto',
+		));
+
+		acf_register_block_type(array(
+			'name'              => 'images-3-texts-1',
+			'title'             => __('Images 3 texts 1'),
+			'description'       => __('A Images 3 texts 1 section.'),
+			'post_types'        => array('page'),
+			'render_template'   => 'templates/blocks/block-images-3-texts-1.php',
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('images-3-texts-1', get_template_directory_uri() . '/build/css/blocks/images-3-texts-1.min.css');
+			},
+			'icon'              => 'welcome-widgets-menus',
+			'category'          => 'sfwed-blocks',
+			'supports'          => array(
+				'align' => false,
+				'anchor' => true,
+				'multiple' => true,
+			),
+			'mode' => 'auto',
+		));
+
+		acf_register_block_type(array(
+			'name'              => 'images-1-texts-2',
+			'title'             => __('Images 1 texts 2'),
+			'description'       => __('A Images 1 texts 2 section.'),
+			'post_types'        => array('page'),
+			'render_template'   => 'templates/blocks/block-images-1-texts-2.php',
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('images-1-texts-2', get_template_directory_uri() . '/build/css/blocks/images-1-texts-2.min.css');
 			},
 			'icon'              => 'welcome-widgets-menus',
 			'category'          => 'sfwed-blocks',
@@ -399,7 +457,10 @@ function sfwed_allowed_blocks($allowedBlocks)
 			'acf/image-text',
 			'acf/image-text-image',
 			'acf/hero-with-box',
-			'acf/2-images-2-texts',
+			'acf/faq',
+			'acf/images-2-texts-2',
+			'acf/images-3-texts-1',
+			'acf/images-1-texts-2',
 		);
 	}
 

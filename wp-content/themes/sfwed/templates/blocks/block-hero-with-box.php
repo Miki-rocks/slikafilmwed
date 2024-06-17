@@ -35,8 +35,8 @@ $baseClass = 'hero-with-box';
 			<div class="row h-100">
 				<div class="col-12">
 
-					<div class="<?php echo $baseClass; ?>__content d-flex h-100 justify-content-end align-items-end">
-						<div class="<?php echo $baseClass; ?>__textbox position-relative overflow-hidden">
+					<div class="<?php echo $baseClass; ?>__content d-flex h-100 justify-content-lg-end align-items-end align-items-lg-center pb-8 pb-lg-0 mr-lg-13">
+						<div class="<?php echo $baseClass; ?>__textbox position-relative overflow-hidden px-6 py-4 px-lg-10 py-lg-8">
 							<?php if (isset($data['textbox_background']) && !empty($data['textbox_background'])) {
 								echo wp_get_attachment_image($data['textbox_background'], 'full', '', ['class' => $baseClass . '__textbox_background', 'title' => 'Packages content'] );
 							} ?>
