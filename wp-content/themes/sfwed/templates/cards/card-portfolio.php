@@ -6,7 +6,7 @@ $array_defaults = array(
 	'text' => '',
 	'link' => '',
 	'image_id' => '',
-	'color' => 'color-tertiary-1', // all the classes for title
+	'color' => 'color-black', // all the classes for title
 	'classes' => '',
 );
 

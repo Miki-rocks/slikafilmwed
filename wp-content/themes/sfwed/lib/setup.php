@@ -113,6 +113,11 @@ function sfwed_assets() {
     wp_enqueue_style('hero-simple', get_template_directory_uri() . '/build/css/blocks/hero-simple.min.css');
 		wp_enqueue_style('social-share', get_template_directory_uri() . '/build/css/blocks/social-share.min.css');
   }
+
+  if ( post_password_required() ) {
+    wp_enqueue_style('hero-with-box', get_template_directory_uri() . '/build/css/blocks/hero-with-box.min.css');
+	  wp_enqueue_style('contact', get_template_directory_uri() . '/build/css/blocks/contact.min.css');
+  }
 }
 add_action( 'wp_enqueue_scripts', 'sfwed_assets', 100 );
 

@@ -95,7 +95,7 @@ $portfolio_categories = get_terms( array(
 							'text' => join( ', ', $term_links ),
 							'link' => get_permalink($post->ID),
 							'image_id' => get_post_thumbnail_id($post->ID),
-							'color' => 'color-tertiary-1',
+							'color' => 'color-black',
 						);
 
 						get_template_part('templates/cards/card-portfolio', null, $args); ?>
