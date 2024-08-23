@@ -22,7 +22,7 @@ if (!array_filter($data)) {
 $baseClass = 'homepage-hero';
 ?>
 
-<section class="sfwed-section <?php echo $baseClass; ?> hero-w-scroll overflow-hidden position-relative d-flex flex-column align-items-center justify-content-end" <?php echo (isset($block['anchor']) && !empty($block['anchor'])) ? 'id="' . $block['anchor'] . '"' : '' ; ?>>
+<section class="sfwed-section <?php echo $baseClass; ?> hero-w-scroll overflow-hidden position-relative d-flex flex-column align-items-center justify-content-start" <?php echo (isset($block['anchor']) && !empty($block['anchor'])) ? 'id="' . $block['anchor'] . '"' : '' ; ?>>
 	
 	<div class="<?php echo $baseClass; ?>__slider">
 		<?php if (isset($data['images']) && !empty($data['images'])) { ?>
@@ -41,9 +41,9 @@ $baseClass = 'homepage-hero';
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-10 offset-md-1">
-				<div class="<?php echo $baseClass; ?>__content text-center pt-13 pb-10">
-					<h1 class="<?php echo $baseClass; ?>__title font-size-h-xl text-white mb-3 mb-lg-6 pt-13 mt-13"><?php echo $data['title']; ?></h1>
-					<h2 class="<?php echo $baseClass; ?>__subtitle text-white font-size-h-s mb-0 mx-5 mx-lg-auto"><?php echo $data['subtitle']; ?></h2>
+				<div class="<?php echo $baseClass; ?>__content text-center pt-lg-13 pb-10">
+					<h1 class="<?php echo $baseClass; ?>__title font-size-h-xl mb-3 mb-lg-6 pt-13"><?php echo $data['title']; ?></h1>
+					<h2 class="<?php echo $baseClass; ?>__subtitle font-size-h-s mb-0 mx-5 mx-lg-auto"><?php echo $data['subtitle']; ?></h2>
 
 					<?php if (isset($data['button']) && !empty($data['button'])) { ?>
 						<div class="mt-6">

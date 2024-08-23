@@ -3,7 +3,7 @@
  * Get sfwed svg logo
  */
 function sfwed_logo() {
-	return sfwed_render_svg( 'logo', 'raw', 'uri' );
+	return sfwed_render_svg( 'logo-2', 'raw', 'uri' );
 }
 
 /*
